@@ -4,6 +4,7 @@
 #
 # Modes:     throughput  (50 steps, no logging)
 #            train       (N steps, with W&B and Tensorboard)
+#            profile     (20 steps, PyTorch profiler on rank 0, Tensorboard)
 #
 # Sizes:     125m, 350m, 760m, 1.5b, 3b, 8b
 #
@@ -34,6 +35,7 @@ case $MODE in
     --log-timers-to-tensorboard
     --log-memory-to-tensorboard"
         WANDB=true
+        PROFILING_EXTRA=""
         ;;
     train)
         TRAINING_STEPS=${3:?Usage: ./launch.sh train <model_size> <steps> [nodes]}
@@ -47,9 +49,29 @@ case $MODE in
     --log-timers-to-tensorboard
     --log-memory-to-tensorboard"
         WANDB=true
+        PROFILING_EXTRA=""
+        ;;
+    profile)
+        TRAINING_STEPS=${3:-20}
+        NODES=${4:-1}
+        TIME=00:15:00
+        EVAL_INTERVAL=$TRAINING_STEPS
+        EVAL_ITERS=0
+        LR_WARMUP_ITERS=5
+        LOGGING_EXTRA="
+    --tensorboard-dir \$TENSORBOARD_DIR
+    --log-timers-to-tensorboard
+    --log-memory-to-tensorboard"
+        WANDB=false
+        PROFILING_EXTRA="
+    --profile
+    --use-pytorch-profiler
+    --profile-step-start 5
+    --profile-step-end 6
+    --profile-ranks 0"
         ;;
     *)
-        echo "Unknown mode: $MODE. Choose: throughput, train"
+        echo "Unknown mode: $MODE. Choose: throughput, train, profile"
         exit 1
         ;;
 esac
@@ -129,7 +151,7 @@ cat >> "$SCRIPT" << SBATCH_DIRECTIVES
 #SBATCH --cpus-per-task=288
 #SBATCH --mem=460000
 #SBATCH --no-requeue
-#SBATCH --partition=normal
+#SBATCH --partition=debug
 
 SBATCH_DIRECTIVES
 
@@ -265,6 +287,12 @@ ${LOGGING_EXTRA}
 )
 LOGGING_EXTRA
 
+cat >> "$SCRIPT" << PROFILING_SECTION
+
+PROFILING_ARGS=(${PROFILING_EXTRA}
+)
+PROFILING_SECTION
+
 cat >> "$SCRIPT" << 'TOKENIZER'
 
 TOKENIZER_ARGS=(
@@ -299,6 +327,7 @@ TRAINING_CMD="torchrun ${TORCHRUN_ARGS[@]} $MEGATRON_LM_DIR/pretrain_gpt.py \
     ${MIXED_PRECISION_ARGS[@]} \
     ${DISTRIBUTED_ARGS[@]} \
     ${LOGGING_ARGS[@]} \
+    ${PROFILING_ARGS[@]} \
     ${TOKENIZER_ARGS[@]} \
     ${DATA_ARGS[@]}"
 
