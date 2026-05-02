@@ -80,15 +80,18 @@ if __name__ == "__main__":
     m_norm = act_mem_mlp_norm       (s, b, h, tp=tp)
 
     # these are not offloadable in fine grained offloading.
-    a_fc1   = act_fc1_output         (s, b, ffn, tp=tp)
-    gelu_output = a_fc1  # same shape as fc1 output
-    a_fc2 = (s / tp) * b * h * 2
+    # fc1 input: saved by ColumnParallelLinear save_for_backward(input, weight)
+    a_fc1_input  = (s / tp) * b * h * 2
+    # fc1 output: saved by BiasSwiGLUFunction as the activation's input for backward
+    a_fc1_output = act_fc1_output(s, b, ffn, tp=tp)
+    # fc2 input (= activation output): saved by RowParallelLinear save_for_backward(input, weight)
+    a_fc2_input  = s * b * (ffn / tp) * 2
     bda_after_attn = (s / tp) * b * h
     bda_after_mlp  = (s / tp) * b * h
 
     offloadable     = a_norm + qkv + c_attn + a_proj + m_norm
     stuck           = total - offloadable
-    total_accounted = a_norm + qkv + c_attn + a_proj + m_norm + a_fc1 + gelu_output + a_fc2 + bda_after_attn + bda_after_mlp
+    total_accounted = a_norm + qkv + c_attn + a_proj + m_norm + a_fc1_input + a_fc1_output + a_fc2_input + bda_after_attn + bda_after_mlp
 
     # FLOPs per module (forward pass, per GPU)
     f_a_norm = flop_layernorm  (s, b, h,              tp=tp)
@@ -123,12 +126,12 @@ if __name__ == "__main__":
     row("[mlp_norm]",   "pre-MLP layernorm input:",m_norm, 100*m_norm/total, f_m_norm,
         "2sbh/tp B",              "5·(s/tp)·b·h")
     print(f"  {'─'*30}  (not offloadable below)  {'─'*30}")
-    row("[mlp_fc1]",    "mlp fc1 output:",         a_fc1,       100*a_fc1      /total, f_fc1,
-        "2sb·ffn/tp B",           "2s·b·h·ffn/tp")
-    row("[gelu_output]","gelu output:",             gelu_output, 100*gelu_output/total, f_gelu,
+    row("[mlp_fc1_in]", "mlp fc1 input:",           a_fc1_input,  100*a_fc1_input /total, f_fc1,
+        "2sbh/tp B",              "2s·b·h·ffn/tp")
+    row("[mlp_act_in]", "activation input:",        a_fc1_output, 100*a_fc1_output/total, f_gelu,
         "2sb·ffn/tp B",           "8·(s/tp)·b·ffn")
-    row("[mlp_fc2]",    "mlp fc2 input:",           a_fc2,       100*a_fc2      /total, f_fc2,
-        "2sb·h/tp B",             "2s·b·h·ffn/tp")
+    row("[mlp_fc2_in]", "mlp fc2 input:",           a_fc2_input,  100*a_fc2_input /total, f_fc2,
+        "2sb·ffn/tp B",           "2s·b·h·ffn/tp")
     row("[bda_attn]",   "bda after attn:",     bda_after_attn, 100*bda_after_attn/total, f_bda,
         "sb·h/tp B",              "—")
     row("[bda_mlp]",    "bda after mlp:",      bda_after_mlp,  100*bda_after_mlp /total, f_bda,
