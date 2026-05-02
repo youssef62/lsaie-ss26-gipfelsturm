@@ -6,7 +6,7 @@
 #            train       (N steps, with W&B and Tensorboard)
 #            profile     (20 steps, PyTorch profiler on rank 0, Tensorboard)
 #
-# Sizes:     125m, 350m, 760m, 1.5b, 3b, 8b
+# Sizes:     125m, 350m, 760m, 1.5b, 3b, 8b, 18b, 22b, 24b
 #
 # Steps:     required for train mode (e.g., 1000, 5000, 15000)
 # Nodes:     optional, default 4 (max 8)
@@ -106,8 +106,20 @@ case $MODEL_SIZE in
         NUM_LAYERS=32; HIDDEN=4096; FFN=14336; HEADS=32; KV_HEADS=8
         MBS=2
         ;;
+    18b)
+        NUM_LAYERS=40; HIDDEN=6144; FFN=20480; HEADS=48; KV_HEADS=8
+        MBS=1
+        ;;
+    22b)
+        NUM_LAYERS=40; HIDDEN=7168; FFN=19456; HEADS=56; KV_HEADS=8
+        MBS=1
+        ;;
+    24b)
+        NUM_LAYERS=32; HIDDEN=8192; FFN=24576; HEADS=64; KV_HEADS=8
+        MBS=1
+        ;;
     *)
-        echo "Unknown model size: $MODEL_SIZE. Choose: 125m, 350m, 760m, 1.5b, 3b, 8b"
+        echo "Unknown model size: $MODEL_SIZE. Choose: 125m, 350m, 760m, 1.5b, 3b, 8b, 18b, 22b, 24b"
         exit 1
         ;;
 esac
