@@ -29,8 +29,11 @@ case $MODE in
         EVAL_INTERVAL=$TRAINING_STEPS
         EVAL_ITERS=0
         LR_WARMUP_ITERS=10
-        LOGGING_EXTRA=""
-        WANDB=false
+        LOGGING_EXTRA="
+        --tensorboard-dir \$TENSORBOARD_DIR
+        --log-timers-to-tensorboard
+        --log-memory-to-tensorboard"
+        WANDB=true
         ;;
     train)
         TRAINING_STEPS=${3:?Usage: ./launch.sh train <model_size> <steps> [nodes]}
@@ -115,7 +118,7 @@ cat > "$SCRIPT" << 'HEADER'
 HEADER
 
 cat >> "$SCRIPT" << SBATCH_DIRECTIVES
-#SBATCH --account=infra01
+#SBATCH --account=lsaie-ss26
 #SBATCH --time=${TIME}
 #SBATCH --job-name=${JOB_NAME}
 #SBATCH --output=logs/%x-%j.log
@@ -126,6 +129,7 @@ cat >> "$SCRIPT" << SBATCH_DIRECTIVES
 #SBATCH --cpus-per-task=288
 #SBATCH --mem=460000
 #SBATCH --no-requeue
+#SBATCH --partition=normal
 SBATCH_DIRECTIVES
 
 cat >> "$SCRIPT" << 'BODY'
@@ -133,7 +137,7 @@ cat >> "$SCRIPT" << 'BODY'
 echo "START TIME: $(date)"
 
 ################ Configs ################
-WORKDIR=/users/schlag/gipfelsturm
+WORKDIR=/users/course_00196/scratch/lsaie-ss26-gipfelsturm
 MEGATRON_LM_DIR=$WORKDIR/Megatron-LM
 DATA_PREFIX=/capstor/store/cscs/swissai/infra01/datasets/nvidia/Nemotron-ClimbMix/climbmix_small_megatron/climbmix_small
 DATASET_CACHE_DIR=/iopsstor/scratch/cscs/$USER/gipfelsturm/cache
