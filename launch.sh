@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Usage: ./launch.sh <mode> <model_size> [steps] [nodes]
+# Usage: ./launch.sh <mode> <model_size> [steps] [nodes] [extra_args]
 #
 # Modes:     throughput  (50 steps, no logging)
 #            train       (N steps, with W&B and Tensorboard)
@@ -9,16 +9,19 @@
 #
 # Steps:     required for train mode (e.g., 1000, 5000, 15000)
 # Nodes:     optional, default 4 (max 8)
+# Extra:     optional, extra flags passed to the training command (quoted string)
 #
 # Examples:  ./launch.sh throughput 760m
 #            ./launch.sh throughput 8b 50 1
 #            ./launch.sh train 760m 5000
 #            ./launch.sh train 1.5b 3000 8
+#            ./launch.sh throughput 8b 50 1 "--cuda-graph-impl transformer_engine --cuda-graph-scope full"
 
 set -euo pipefail
 
-MODE=${1:?Usage: ./launch.sh <mode> <model_size> [steps] [nodes]}
-MODEL_SIZE=${2:?Usage: ./launch.sh <mode> <model_size> [steps] [nodes]}
+MODE=${1:?Usage: ./launch.sh <mode> <model_size> [steps] [nodes] [extra_args]}
+MODEL_SIZE=${2:?Usage: ./launch.sh <mode> <model_size> [steps] [nodes] [extra_args]}
+EXTRA_ARGS=${5:-}
 
 ################ Mode config ################
 case $MODE in
@@ -150,6 +153,7 @@ MBS=${MBS}
 GBS=${GBS}
 SEQ_LEN=${SEQ_LEN}
 TRAINING_STEPS=${TRAINING_STEPS}
+EXTRA_ARGS="${EXTRA_ARGS}"
 
 # Logging
 PROJECT_NAME=gipfelsturm
@@ -252,6 +256,8 @@ DISTRIBUTED_ARGS=(
     --use-distributed-optimizer
     --overlap-grad-reduce
     --overlap-param-gather
+    --cuda-graph-impl transformer_engine
+    --cuda-graph-scope full
 )
 
 LOGGING_ARGS=(
@@ -299,7 +305,8 @@ TRAINING_CMD="torchrun ${TORCHRUN_ARGS[@]} $MEGATRON_LM_DIR/pretrain_gpt.py \
     ${DISTRIBUTED_ARGS[@]} \
     ${LOGGING_ARGS[@]} \
     ${TOKENIZER_ARGS[@]} \
-    ${DATA_ARGS[@]}"
+    ${DATA_ARGS[@]} \
+    ${EXTRA_ARGS}"
 
 TOKENIZER
 
