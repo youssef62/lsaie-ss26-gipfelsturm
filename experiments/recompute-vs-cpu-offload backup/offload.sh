@@ -3,7 +3,7 @@ NODES=1
 STEPS=50
 TP=4
 
-export PARTITION=normal
+export PARTITION=debug
 
 export JOB_NAME="${MODEL}-${STEPS}s-${NODES}n-tp${TP}-pp${PP}-full-offload"
 export PROJECT_NAME="lsaie-cpu-activation-offloading"

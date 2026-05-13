@@ -10,8 +10,7 @@ export JOB_NAME="${MODEL}-${STEPS}s-${NODES}n-tp${TP}-finegrained-offload-attn-p
 export PROJECT_NAME="lsaie-cpu-activation-offloading"
 
 export EXTRA_ARGS="--fine-grained-activation-offloading
-    --offload-modules core_attn qkv_linear
-    --recompute-granularity full
-    --recompute-method uniform
-    --recompute-num-layers 1"
+    --offload-modules core_attn qkv_linear attn_proj attn_norm mlp_norm
+    --recompute-granularity selective
+    --recompute-modules layernorm mlp"
 $(dirname $0)/launch.sh throughput $MODEL $STEPS $NODES $TP
