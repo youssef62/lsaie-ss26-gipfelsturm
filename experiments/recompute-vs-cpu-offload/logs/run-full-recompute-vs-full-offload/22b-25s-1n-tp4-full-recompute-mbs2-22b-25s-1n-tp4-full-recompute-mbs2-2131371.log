@@ -1,13 +1,6 @@
-START TIME: Fri May  1 10:06:45 CEST 2026
-fatal: Unable to create '/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/.git/modules/Megatron-LM/index.lock': File exists.
-
-Another git process seems to be running in this repository, e.g.
-an editor opened by 'git commit'. Please make sure all processes
-are terminated then try again. If it still fails, a git process
-may have crashed in this repository earlier:
-remove the file manually to continue.
-[Fri May  1 10:06:45 CEST 2026] WANDB enabled.
-CMD: torchrun --nproc-per-node 4 --nnodes 1 --rdzv_endpoint nid007645:25678 --rdzv_backend c10d --max_restarts 0 --tee 3 /users/course_00197/scratch/lsaie-ss26-gipfelsturm/Megatron-LM/pretrain_gpt.py     --transformer-impl transformer_engine --use-precision-aware-optimizer --main-grads-dtype bf16     --num-layers 40 --hidden-size 6144 --ffn-hidden-size 20480 --num-attention-heads 48 --group-query-attention --num-query-groups 8 --max-position-embeddings 4096 --position-embedding-type rope --normalization RMSNorm --swiglu --untie-embeddings-and-output-weights --seq-length 4096     --micro-batch-size 1 --global-batch-size 256 --train-iters 50 --log-interval 1 --eval-interval 50 --eval-iters 0 --cross-entropy-loss-fusion --disable-bias-linear --optimizer adam --dataloader-type single --no-check-for-nan-in-loss-and-grad --manual-gc --manual-gc-interval 50     --attention-dropout 0.0 --hidden-dropout 0.0 --weight-decay 0.1 --clip-grad 1.0 --adam-beta1 0.9 --adam-beta2 0.95     --lr 3e-4 --lr-decay-style constant --lr-warmup-iters 10     --seed 42 --init-method-std 0.02     --bf16     --tensor-model-parallel-size 4 --pipeline-model-parallel-size 1 --use-distributed-optimizer --overlap-grad-reduce --overlap-param-gather     --log-throughput --peak-gpu-tflops 989 --log-progress --tensorboard-dir /iopsstor/scratch/cscs/course_00197/gipfelsturm/lsaie-cpu-activation-offloading/18b-50s-1n-tp4-finegrained-offload-attn-proj/tensorboard --log-timers-to-tensorboard --log-memory-to-tensorboard          --tokenizer-type GPT2BPETokenizer --vocab-file /users/course_00197/scratch/lsaie-ss26-gipfelsturm/data/gpt2-vocab.json --merge-file /users/course_00197/scratch/lsaie-ss26-gipfelsturm/data/gpt2-merges.txt     --data-path /capstor/store/cscs/swissai/infra01/datasets/nvidia/Nemotron-ClimbMix/climbmix_small_megatron/climbmix_small --data-cache-path /iopsstor/scratch/cscs/course_00197/gipfelsturm/cache --split 99,1,0 --num-workers 1 --fine-grained-activation-offloading     --offload-modules core_attn attn_proj     --recompute-granularity full     --recompute-method uniform     --recompute-num-layers 1          --wandb-save-dir /iopsstor/scratch/cscs/course_00197/gipfelsturm/lsaie-cpu-activation-offloading/18b-50s-1n-tp4-finegrained-offload-attn-proj         --wandb-project lsaie-cpu-activation-offloading         --wandb-exp-name 18b-50s-1n-tp4-finegrained-offload-attn-proj-1996443
+START TIME: Tue May 12 19:32:14 CEST 2026
+[Tue May 12 19:32:14 CEST 2026] WANDB enabled.
+CMD: torchrun --nproc-per-node 4 --nnodes 1 --rdzv_endpoint nid006978:25678 --rdzv_backend c10d --max_restarts 0 --tee 3 /users/course_00197/scratch/lsaie-ss26-gipfelsturm/Megatron-LM/pretrain_gpt.py     --transformer-impl transformer_engine --use-precision-aware-optimizer --main-grads-dtype bf16     --num-layers 40 --hidden-size 7168 --ffn-hidden-size 20480 --num-attention-heads 56 --group-query-attention --num-query-groups 8 --max-position-embeddings 4096 --position-embedding-type rope --normalization RMSNorm --swiglu --untie-embeddings-and-output-weights --seq-length 4096     --micro-batch-size 2 --global-batch-size 256 --train-iters 25 --log-interval 1 --eval-interval 25 --eval-iters 0 --cross-entropy-loss-fusion --disable-bias-linear --optimizer adam --dataloader-type single --no-check-for-nan-in-loss-and-grad --manual-gc --manual-gc-interval 50     --attention-dropout 0.0 --hidden-dropout 0.0 --weight-decay 0.1 --clip-grad 1.0 --adam-beta1 0.9 --adam-beta2 0.95     --lr 3e-4 --lr-decay-style constant --lr-warmup-iters 10     --seed 42 --init-method-std 0.02     --bf16     --tensor-model-parallel-size 4 --pipeline-model-parallel-size 1 --use-distributed-optimizer --overlap-grad-reduce --overlap-param-gather     --log-throughput --peak-gpu-tflops 989 --log-progress --tensorboard-dir /iopsstor/scratch/cscs/course_00197/gipfelsturm/lsaie-cpu-activation-offloading-1/22b-25s-1n-tp4-full-recompute-mbs2/tensorboard --log-timers-to-tensorboard --log-memory-to-tensorboard          --tokenizer-type GPT2BPETokenizer --vocab-file /users/course_00197/scratch/lsaie-ss26-gipfelsturm/data/gpt2-vocab.json --merge-file /users/course_00197/scratch/lsaie-ss26-gipfelsturm/data/gpt2-merges.txt     --data-path /capstor/store/cscs/swissai/infra01/datasets/nvidia/Nemotron-ClimbMix/climbmix_small_megatron/climbmix_small --data-cache-path /iopsstor/scratch/cscs/course_00197/gipfelsturm/cache --split 99,1,0 --num-workers 1 --recompute-granularity full     --recompute-method uniform     --recompute-num-layers 1          --wandb-save-dir /iopsstor/scratch/cscs/course_00197/gipfelsturm/lsaie-cpu-activation-offloading-1/22b-25s-1n-tp4-full-recompute-mbs2         --wandb-project lsaie-cpu-activation-offloading-1         --wandb-exp-name 22b-25s-1n-tp4-full-recompute-mbs2-2131371
 0: [default0]:/usr/local/lib/python3.12/dist-packages/torch/library.py:357: UserWarning: Warning only once for all operators,  other operators may also be overridden.
 0: [default0]:  Overriding a previously registered kernel for the same operator and the same dispatch key
 0: [default0]:  operator: flash_attn::_flash_attn_backward(Tensor dout, Tensor q, Tensor k, Tensor v, Tensor out, Tensor softmax_lse, Tensor(a6!)? dq, Tensor(a7!)? dk, Tensor(a8!)? dv, float dropout_p, float softmax_scale, bool causal, SymInt window_size_left, SymInt window_size_right, float softcap, Tensor? alibi_slopes, bool deterministic, Tensor? rng_state=None) -> Tensor
@@ -18,8 +11,6 @@ CMD: torchrun --nproc-per-node 4 --nnodes 1 --rdzv_endpoint nid007645:25678 --rd
 0: eratorEntry.cpp:208.)
 0: [default0]:  self.m.impl(
 0: [default3]:> setting tensorboard ...
-0: [default0]:/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/training/utils.py:411: UserWarning: Overriding default arguments for tokenizer_type:GPT2BPETokenizer with tokenizer_type:GPT2BPETokenizer
-0: [default0]:  warnings.warn(message)
 0: [default0]:using world size: 4, data-parallel size: 1, context-parallel size: 1, hierarchical context-parallel sizes: None, tensor-model-parallel size: 4, pipeline-model-parallel size: 1
 0: [default0]:Number of virtual stages per pipeline stage: None
 0: [default0]:using torch.bfloat16 for parameters ...
@@ -27,8 +18,10 @@ CMD: torchrun --nproc-per-node 4 --nnodes 1 --rdzv_endpoint nid007645:25678 --rd
 0: [default0]:  account_for_embedding_in_pipeline_split ......... False
 0: [default0]:  account_for_loss_in_pipeline_split .............. False
 0: [default0]:  accumulate_allreduce_grads_in_fp32 .............. False
+0: [default0]:/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/training/utils.py:411: UserWarning: Overriding default arguments for tokenizer_type:GPT2BPETokenizer with tokenizer_type:GPT2BPETokenizer
 0: [default0]:  activation_func_clamp_value ..................... None
 0: [default0]:  adam_beta1 ...................................... 0.9
+0: [default0]:  warnings.warn(message)
 0: [default0]:  adam_beta2 ...................................... 0.95
 0: [default0]:  adam_eps ........................................ 1e-08
 0: [default0]:  add_bias_linear ................................. False
@@ -47,7 +40,8 @@ CMD: torchrun --nproc-per-node 4 --nnodes 1 --rdzv_endpoint nid007645:25678 --rd
 0: [default0]:  apply_wd_to_qk_layernorm ........................ False
 0: [default0]:  async_save ...................................... False
 0: [default0]:  async_tensor_model_parallel_allreduce ........... True
-0: [default0]:  attention_backend ............................... AttnBackend.auto
+0: [default0]:  attention_backend ............................... 
+0: AttnBackend.auto
 0: [default0]:  attention_dropout ............................... 0.0
 0: [default0]:  attention_output_gate ........................... False
 0: [default0]:  attention_softmax_in_fp32 ....................... False
@@ -61,8 +55,7 @@ CMD: torchrun --nproc-per-node 4 --nnodes 1 --rdzv_endpoint nid007645:25678 --rd
 0: [default0]:  bias_dropout_fusion ............................. True
 0: [default0]:  bias_gelu_fusion ................................ False
 0: [default0]:  bias_swiglu_fusion .............................. True
-0: [default0]:  biencoder_projection_dim ..............
-0: .......... 0
+0: [default0]:  biencoder_projection_dim ........................ 0
 0: [default0]:  biencoder_shared_query_context_model ............ False
 0: [default0]:  block_data_path ................................. None
 0: [default0]:  cache_mla_latents ............................... False
@@ -82,7 +75,8 @@ CMD: torchrun --nproc-per-node 4 --nnodes 1 --rdzv_endpoint nid007645:25678 --rd
 0: [default0]:  ckpt_fully_parallel_save_deprecated ............. False
 0: [default0]:  ckpt_step ....................................... None
 0: [default0]:  classes_fraction ................................ 1.0
-0: [default0]:  clip_grad ....................................... 1.0
+0: [default0]:  clip_grad .....................................
+0: .. 1.0
 0: [default0]:  clone_scatter_output_in_embedding ............... True
 0: [default0]:  config_logger_dir ............................... 
 0: [default0]:  consumed_train_samples .......................... 0
@@ -98,7 +92,8 @@ CMD: torchrun --nproc-per-node 4 --nnodes 1 --rdzv_endpoint nid007645:25678 --rd
 0: [default0]:  cuda_graph_scope ................................ []
 0: [default0]:  cuda_graph_warmup_steps ......................... 3
 0: [default0]:  data_args_path .................................. None
-0: [default0]:  data_cache_path ................................. /iopsstor/scratch/cscs/course_00197/gipfelsturm/cache
+0: [default0]:  data_cache_path ................................. /iopsstor/scratch/cscs/c
+0: ourse_00197/gipfelsturm/cache
 0: [default0]:  data_parallel_random_init ....................... False
 0: [default0]:  data_parallel_sharding_strategy ................. no_shard
 0: [default0]:  data_parallel_size .............................. 1
@@ -129,8 +124,7 @@ CMD: torchrun --nproc-per-node 4 --nnodes 1 --rdzv_endpoint nid007645:25678 --rd
 0: [default0]:  dino_freeze_last_layer .......................... 1
 0: [default0]:  dino_head_hidden_size ........................... 2048
 0: [default0]:  dino_local_crops_number ......................... 10
-0: [defa
-0: ult0]:  dino_local_img_size ............................. 96
+0: [default0]:  dino_local_img_size ............................. 96
 0: [default0]:  dino_norm_last_layer ............................ False
 0: [default0]:  dino_teacher_temp ............................... 0.07
 0: [default0]:  dino_warmup_teacher_temp ........................ 0.04
@@ -147,9 +141,9 @@ CMD: torchrun --nproc-per-node 4 --nnodes 1 --rdzv_endpoint nid007645:25678 --rd
 0: [default0]:  distrib_optim_fully_reshardable_mem_efficient ... False
 0: [default0]:  distribute_saved_activations .................... False
 0: [default0]:  distributed_backend ............................. nccl
-0: [default0]:  distributed_timeout_minutes .........
-0: ............ 10
-0: [default0]:  distributed_timeout_seconds_after_init .......... None
+0: [default0]:  distributed_timeout_minutes ..................... 10
+0: [default0]:  distributed_timeout_seconds_after_init 
+0: .......... None
 0: [default0]:  dsa_indexer_head_dim ............................ None
 0: [default0]:  dsa_indexer_loss_coeff .......................... None
 0: [default0]:  dsa_indexer_n_heads ............................. None
@@ -174,8 +168,9 @@ CMD: torchrun --nproc-per-node 4 --nnodes 1 --rdzv_endpoint nid007645:25678 --rd
 0: [default0]:  ep_overlap_early_attn_memory_release ............ False
 0: [default0]:  error_injection_rate ............................ 0
 0: [default0]:  error_injection_type ............................ transient_error
-0: [default0]:  eval_interval ................................... 50
+0: [default0]:  eval_interval ................................... 25
 0: [default0]:  eval_iters ...................................... 0
+0: 
 0: [default0]:  evidence_data_path .............................. None
 0: [default0]:  exit_duration_in_mins ........................... None
 0: [default0]:  exit_interval ................................... None
@@ -204,7 +199,8 @@ CMD: torchrun --nproc-per-node 4 --nnodes 1 --rdzv_endpoint nid007645:25678 --rd
 0: [default0]:  export_te_mcore_model ........................... False
 0: [default0]:  external_cuda_graph ............................. False
 0: [default0]:  fake_process_group .............................. False
-0: [default0]:  ffn_hidden_size ................................. 20480
+0: [default0]:  ffn_hidden_size ................................
+0: . 20480
 0: [default0]:  fim_data ........................................ False
 0: [default0]:  fim_eod_token ................................... <|endoftext|>
 0: [default0]:  fim_fragment_rate ............................... None
@@ -215,9 +211,8 @@ CMD: torchrun --nproc-per-node 4 --nnodes 1 --rdzv_endpoint nid007645:25678 --rd
 0: [default0]:  fim_rate ........................................ 0.5
 0: [default0]:  fim_split_sample ................................ None
 0: [default0]:  fim_spm_rate .................................... 0.5
-0: [default0]:  fim_suffix_token .........
-0: ....................... <fim_suffix>
-0: [default0]:  fine_grained_activation_offloading .............. True
+0: [default0]:  fim_suffix_token ................................ <fim_suffix>
+0: [default0]:  fine_grained_activation_offloading .............. False
 0: [default0]:  finetune ........................................ False
 0: [default0]:  finetune_data_split ............................. train
 0: [default0]:  finetune_hf_dataset ............................. None
@@ -261,7 +256,7 @@ CMD: torchrun --nproc-per-node 4 --nnodes 1 --rdzv_endpoint nid007645:25678 --rd
 0: [default0]:  heterogeneous_layers_config_encoded_json ........ None
 0: [default0]:  heterogeneous_layers_config_path ................ None
 0: [default0]:  hidden_dropout .................................. 0.0
-0: [default0]:  hidden_size ..................................... 6144
+0: [default0]:  hidden_size ..................................... 7168
 0: [default0]:  hierarchical_context_parallel_sizes ............. None
 0: [default0]:  high_priority_stream_groups ..................... []
 0: [default0]:  hybrid_attention_ratio .......................... 0.0
@@ -300,6 +295,7 @@ CMD: torchrun --nproc-per-node 4 --nnodes 1 --rdzv_endpoint nid007645:25678 --rd
 0: [default0]:  initial_loss_scale .............................. 4294967296
 0: [default0]:  inprocess_active_world_size ..................... 4
 0: [default0]:  inprocess_barrier_timeout ....................... 120
+0: 
 0: [default0]:  inprocess_completion_timeout .................... 120
 0: [default0]:  inprocess_empty_cuda_cache ...................... False
 0: [default0]:  inprocess_granularity ........................... node
@@ -356,8 +352,7 @@ CMD: torchrun --nproc-per-node 4 --nnodes 1 --rdzv_endpoint nid007645:25678 --rd
 0: [default0]:  logging_level ................................... None
 0: [default0]:  loss_scale ...................................... None
 0: [default0]:  loss_scale_window ............................... 1000
-0: [default0]:  lr .............................................. 0.0
-0: 003
+0: [default0]:  lr .............................................. 0.0003
 0: [default0]:  lr_decay_iters .................................. None
 0: [default0]:  lr_decay_samples ................................ None
 0: [default0]:  lr_decay_style .................................. constant
@@ -374,7 +369,8 @@ CMD: torchrun --nproc-per-node 4 --nnodes 1 --rdzv_endpoint nid007645:25678 --rd
 0: [default0]:  mamba_head_dim .................................. 64
 0: [default0]:  mamba_num_groups ................................ 8
 0: [default0]:  mamba_num_heads ................................. None
-0: [default0]:  mamba_state_dim ................................. 128
+0: [default0]:  mamba_state_dim .........................
+0: ........ 128
 0: [default0]:  manual_gc ....................................... True
 0: [default0]:  manual_gc_eval .................................. True
 0: [default0]:  manual_gc_interval .............................. 50
@@ -387,7 +383,7 @@ CMD: torchrun --nproc-per-node 4 --nnodes 1 --rdzv_endpoint nid007645:25678 --rd
 0: [default0]:  max_tokens_to_oom ............................... 12000
 0: [default0]:  memory_snapshot_path ............................ snapshot.pickle
 0: [default0]:  merge_file ...................................... /users/course_00197/scratch/lsaie-ss26-gipfelsturm/data/gpt2-merges.txt
-0: [default0]:  micro_batch_size ................................ 1
+0: [default0]:  micro_batch_size ................................ 2
 0: [default0]:  microbatch_group_size_per_vp_stage .............. None
 0: [default0]:  mid_level_dataset_surplus ....................... 0.005
 0: [default0]:  min_loss_scale .................................. 1.0
@@ -425,7 +421,8 @@ CMD: torchrun --nproc-per-node 4 --nnodes 1 --rdzv_endpoint nid007645:25678 --rd
 0: [default0]:  moe_router_load_balancing_type .................. aux_loss
 0: [default0]:  moe_router_num_groups ........................... None
 0: [default0]:  moe_router_padding_for_fp8 ...................... False
-0: [default0]:  moe_router_padding_for_quantization ............. False
+0: [default0]:  moe_router_padding_for_quantization .........
+0: .... False
 0: [default0]:  moe_router_pre_softmax .......................... False
 0: [default0]:  moe_router_score_function ....................... softmax
 0: [default0]:  moe_router_topk ................................. 2
@@ -455,7 +452,8 @@ CMD: torchrun --nproc-per-node 4 --nnodes 1 --rdzv_endpoint nid007645:25678 --rd
 0: [default0]:  muon_split_qkv .................................. True
 0: [default0]:  muon_tp_mode .................................... blockwise
 0: [default0]:  muon_use_nesterov ............................... False
-0: [default0]:  nccl_all_reduce_for_prefill ..................... False
+0: [default0]:  nccl_all_reduce_for_prefill ..................... F
+0: alse
 0: [default0]:  nccl_communicator_config_path ................... None
 0: [default0]:  nccl_ub ......................................... False
 0: [default0]:  no_load_optim ................................... None
@@ -467,12 +465,11 @@ CMD: torchrun --nproc-per-node 4 --nnodes 1 --rdzv_endpoint nid007645:25678 --rd
 0: [default0]:  no_weight_decay_cond_type ....................... None
 0: [default0]:  non_persistent_ckpt_type ........................ None
 0: [default0]:  non_persistent_global_ckpt_dir .................. None
-0: [default0]:  non_persistent_local_ckpt_algo .................. 
-0: fully_parallel
+0: [default0]:  non_persistent_local_ckpt_algo .................. fully_parallel
 0: [default0]:  non_persistent_local_ckpt_dir ................... None
 0: [default0]:  non_persistent_save_interval .................... None
 0: [default0]:  normalization ................................... RMSNorm
-0: [default0]:  num_attention_heads ............................. 48
+0: [default0]:  num_attention_heads ............................. 56
 0: [default0]:  num_channels .................................... 3
 0: [default0]:  num_classes ..................................... 1000
 0: [default0]:  num_dataset_builder_threads ..................... 1
@@ -486,7 +483,7 @@ CMD: torchrun --nproc-per-node 4 --nnodes 1 --rdzv_endpoint nid007645:25678 --rd
 0: [default0]:  num_virtual_stages_per_pipeline_rank ............ None
 0: [default0]:  num_workers ..................................... 1
 0: [default0]:  object_storage_cache_path ....................... None
-0: [default0]:  offload_modules ................................. ['core_attn', 'attn_proj']
+0: [default0]:  offload_modules ................................. []
 0: [default0]:  one_logger_async ................................ False
 0: [default0]:  one_logger_project .............................. megatron-lm
 0: [default0]:  one_logger_run_name ............................. None
@@ -503,7 +500,8 @@ CMD: torchrun --nproc-per-node 4 --nnodes 1 --rdzv_endpoint nid007645:25678 --rd
 0: [default0]:  overlap_p2p_comm ................................ False
 0: [default0]:  overlap_p2p_comm_warmup_flush ................... False
 0: [default0]:  overlap_param_gather ............................ True
-0: [default0]:  overlap_param_gather_with_optimizer_step ........ False
+0: [default0]:  overlap_param_gather_with_optimizer_step ........
+0:  False
 0: [default0]:  override_opt_param_scheduler .................... False
 0: [default0]:  padded_vocab_size ............................... None
 0: [default0]:  params_dtype .................................... torch.bfloat16
@@ -561,8 +559,7 @@ CMD: torchrun --nproc-per-node 4 --nnodes 1 --rdzv_endpoint nid007645:25678 --rd
 0: [default0]:  rl_importance_sampling_truncation_coef .......... None
 0: [default0]:  rl_inference_expert_model_parallel_size ......... None
 0: [default0]:  rl_inference_expert_tensor_model_parallel_size .. None
-0: [default0]:  rl_inference_logprobs_is_correction ............. F
-0: alse
+0: [default0]:  rl_inference_logprobs_is_correction ............. False
 0: [default0]:  rl_inference_model_unified_memory_level ......... 0
 0: [default0]:  rl_inference_pipeline_model_parallel_size ....... None
 0: [default0]:  rl_inference_tensor_model_parallel_size ......... None
@@ -584,7 +581,8 @@ CMD: torchrun --nproc-per-node 4 --nnodes 1 --rdzv_endpoint nid007645:25678 --rd
 0: [default0]:  rope_type ....................................... None
 0: [default0]:  rotary_base ..................................... 10000
 0: [default0]:  rotary_interleaved .............................. False
-0: [default0]:  rotary_percent .................................. 1.0
+0: [
+0: default0]:  rotary_percent .................................. 1.0
 0: [default0]:  rotary_scaling_factor ........................... 1.0
 0: [default0]:  rotary_seq_len_interpolation_factor ............. None
 0: [default0]:  run_workload_inspector_server ................... False
@@ -621,7 +619,7 @@ CMD: torchrun --nproc-per-node 4 --nnodes 1 --rdzv_endpoint nid007645:25678 --rd
 0: [default0]:  te_precision_config_file ........................ None
 0: [default0]:  te_rng_tracker .................................. False
 0: [default0]:  tensor_model_parallel_size ...................... 4
-0: [default0]:  tensorboard_dir ................................. /iopsstor/scratch/cscs/course_00197/gipfelsturm/lsaie-cpu-activation-offloading/18b-50s-1n-tp4-finegrained-offload-attn-proj/tensorboard
+0: [default0]:  tensorboard_dir ................................. /iopsstor/scratch/cscs/course_00197/gipfelsturm/lsaie-cpu-activation-offloading-1/22b-25s-1n-tp4-full-recompute-mbs2/tensorboard
 0: [default0]:  tensorboard_log_interval ........................ 1
 0: [default0]:  tensorboard_queue_size .......................... 1000
 0: [default0]:  test_data_path .................................. None
@@ -651,7 +649,7 @@ CMD: torchrun --nproc-per-node 4 --nnodes 1 --rdzv_endpoint nid007645:25678 --rd
 0: [default0]:  tp_comm_split_ag ................................ True
 0: [default0]:  tp_comm_split_rs ................................ True
 0: [default0]:  train_data_path ................................. None
-0: [default0]:  train_iters ..................................... 50
+0: [default0]:  train_iters ..................................... 25
 0: [default0]:  train_samples ................................... None
 0: [default0]:  train_sync_interval ............................. None
 0: [default0]:  transformer_impl ................................ transformer_engine
@@ -689,17 +687,16 @@ CMD: torchrun --nproc-per-node 4 --nnodes 1 --rdzv_endpoint nid007645:25678 --rd
 0: [default0]:  valid_data_path ................................. None
 0: [default0]:  variable_seq_lengths ............................ False
 0: [default0]:  virtual_pipeline_model_parallel_size ............ None
-0: [default0]:  vision_backbone_type ............................ 
-0: vit
+0: [default0]:  vision_backbone_type ............................ vit
 0: [default0]:  vision_pretraining .............................. False
 0: [default0]:  vision_pretraining_type ......................... classify
 0: [default0]:  vocab_extra_ids ................................. 0
 0: [default0]:  vocab_file ...................................... /users/course_00197/scratch/lsaie-ss26-gipfelsturm/data/gpt2-vocab.json
 0: [default0]:  vocab_size ...................................... None
 0: [default0]:  wandb_entity .................................... None
-0: [default0]:  wandb_exp_name .................................. 18b-50s-1n-tp4-finegrained-offload-attn-proj-1996443
-0: [default0]:  wandb_project ................................... lsaie-cpu-activation-offloading
-0: [default0]:  wandb_save_dir .................................. /iopsstor/scratch/cscs/course_00197/gipfelsturm/lsaie-cpu-activation-offloading/18b-50s-1n-tp4-finegrained-offload-attn-proj
+0: [default0]:  wandb_exp_name .................................. 22b-25s-1n-tp4-full-recompute-mbs2-2131371
+0: [default0]:  wandb_project ................................... lsaie-cpu-activation-offloading-1
+0: [default0]:  wandb_save_dir .................................. /iopsstor/scratch/cscs/course_00197/gipfelsturm/lsaie-cpu-activation-offloading-1/22b-25s-1n-tp4-full-recompute-mbs2
 0: [default0]:  weight_decay .................................... 0.1
 0: [default0]:  weight_decay_incr_style ......................... constant
 0: [default0]:  wgrad_deferral_limit ............................ 0
@@ -708,18 +705,19 @@ CMD: torchrun --nproc-per-node 4 --nnodes 1 --rdzv_endpoint nid007645:25678 --rd
 0: [default0]:  world_size ...................................... 4
 0: [default0]:  yaml_cfg ........................................ None
 0: [default0]:-------------------- end of arguments ---------------------
-0: [default0]:INFO:megatron.core.num_microbatches_calculator:setting number of microbatches to constant 256
+0: [default0]:INFO:megatron.core.num_microbatches_calculator:setting number of microbatches to constant 128
 0: [default0]:> building GPT2BPETokenizer tokenizer ...
 0: [default0]:WARNING:megatron.core.datasets.megatron_tokenizer:You're using the legacy tokenizer system, which is deprecated and will be removed in a future release. Please migrate to the new tokenizer system (`megatron.core.tokenizers.MegatronTokenizer`).
+0: [default3]:wandb: [wandb.login()] Loaded credentials for https://api.wandb.ai from WANDB_API_KEY.
 0: [default0]: > padded vocab (size: 50257) with 431 dummy tokens (new size: 50688)
 0: [default0]:WARNING:megatron.core.rerun_state_machine:RerunStateMachine initialized in mode RerunMode.VALIDATE_RESULTS
 0: [default0]:> initializing torch distributed ...
-0: [default3]:wandb: [wandb.login()] Loaded credentials for https://api.wandb.ai from WANDB_API_KEY.
-0: [default2]:[W501 10:07:19.630925793 ProcessGroupNCCL.cpp:941] Warning: TORCH_NCCL_AVOID_RECORD_STREAMS is the default now, this environment variable is thus deprecated. (function operator())
+0: [default2]:[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+0: [default1]:[W512 19:32:54.261678051 ProcessGroupNCCL.cpp:941] Warning: TORCH_NCCL_AVOID_RECORD_STREAMS is the default now, this environment variable is thus deprecated. (function operator())
 0: [default2]:[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 0: [default2]:[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-0: [default2]:[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-0: [default0]:[W501 10:07:19.632471571 ProcessGroupNCCL.cpp:941] Warning: TORCH_NCCL_AVOID_RECORD_STREAMS is the default now, this environment variable is thus deprecated. (function operator())
+0: [default2]:[W512 19:32:54.261678179 ProcessGroupNCCL.cpp:941] Warning: TORCH_NCCL_AVOID_RECORD_STREAMS is the default now, this environment variable is thus deprecated. (function operator())
+0: [default0]:[W512 19:32:54.262340496 ProcessGroupNCCL.cpp:941] Warning: TORCH_NCCL_AVOID_RECORD_STREAMS is the default now, this environment variable is thus deprecated. (function operator())
 0: [default0]:[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 0: [default0]:[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 0: [default0]:[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -727,403 +725,400 @@ CMD: torchrun --nproc-per-node 4 --nnodes 1 --rdzv_endpoint nid007645:25678 --rd
 0: [default0]:> initialized pipeline model parallel with size 1
 0: [default0]:> setting random seeds to 42 ...
 0: [default0]:> compiling dataset index builder ...
-0: [default0]:make: Entering directory '/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/core/datasets'
 0: [default0]:/usr/local/lib/python3.12/dist-packages/torch/distributed/c10d_logger.py:83: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
 0: [default0]:  return func(*args, **kwargs)
-0: [default0]:[rank0]:[W501 10:07:20.751933603 ProcessGroupNCCL.cpp:5163] Guessing device ID based on global rank. This can cause a hang if rank to GPU mapping is heterogeneous. You can specify device_id in init_process_group()
+0: [default0]:[rank0]:[W512 19:32:54.399593277 ProcessGroupNCCL.cpp:5163] Guessing device ID based on global rank. This can cause a hang if rank to GPU mapping is heterogeneous. You can specify device_id in init_process_group()
+0: [default0]:make: Entering directory '/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/core/datasets'
 0: [default0]:make: Nothing to be done for 'default'.
 0: [default0]:make: Leaving directory '/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/core/datasets'
-0: [default0]:>>> done with dataset index builder. Compilation time: 0.083 seconds
+0: [default0]:>>> done with dataset index builder. Compilation time: 0.101 seconds
 0: [default0]:> compiling and loading fused kernels ...
 0: [default3]:wandb: Currently logged in as: youssef-bou62 (youssef-bou62-epfl) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
-0: [default3]:wandb: setting up run 2ht43dud
+0: [default3]:wandb: setting up run xf4v97sy
 0: [default3]:wandb: Tracking run with wandb version 0.25.0
-0: [default3]:wandb: Run data is saved locally in /iopsstor/scratch/cscs/course_00197/gipfelsturm/lsaie-cpu-activation-offloading/18b-50s-1n-tp4-finegrained-offload-attn-proj/wandb/run-20260501_100720-2ht43dud
+0: [default3]:wandb: Run data is saved locally in /iopsstor/scratch/cscs/course_00197/gipfelsturm/lsaie-cpu-activation-offloading-1/22b-25s-1n-tp4-full-recompute-mbs2/wandb/run-20260512_193254-xf4v97sy
 0: [default3]:wandb: Run `wandb offline` to turn off syncing.
-0: [default3]:wandb: Syncing run 18b-50s-1n-tp4-finegrained-offload-attn-proj-1996443
-0: [default3]:wandb: ⭐️ View project at https://wandb.ai/youssef-bou62-epfl/lsaie-cpu-activation-offloading
-0: [default3]:wandb: 🚀 View run at https://wandb.ai/youssef-bou62-epfl/lsaie-cpu-activation-offloading/runs/2ht43dud
+0: [default3]:wandb: Syncing run 22b-25s-1n-tp4-full-recompute-mbs2-2131371
+0: [default3]:wandb: ⭐️ View project at https://wandb.ai/youssef-bou62-epfl/lsaie-cpu-activation-offloading-1
+0: [default3]:wandb: 🚀 View run at https://wandb.ai/youssef-bou62-epfl/lsaie-cpu-activation-offloading-1/runs/xf4v97sy
 0: [default3]:WARNING: one_logger package is required to enable e2e metrics tracking. please go to https://confluence.nvidia.com/display/MLWFO/Package+Repositories for details to install it
 0: [default3]:[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 0: [default3]:[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 0: [default3]:[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-0: [default3]:[W501 10:07:22.043151992 ProcessGroupNCCL.cpp:941] Warning: TORCH_NCCL_AVOID_RECORD_STREAMS is the default now, this environment variable is thus deprecated. (function operator())
+0: [default3]:[W512 19:32:57.034140137 ProcessGroupNCCL.cpp:941] Warning: TORCH_NCCL_AVOID_RECORD_STREAMS is the default now, this environment variable is thus deprecated. (function operator())
 0: [default1]:[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 0: [default1]:[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 0: [default1]:[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-0: [default1]:[W501 10:07:24.636185911 ProcessGroupNCCL.cpp:941] Warning: TORCH_NCCL_AVOID_RECORD_STREAMS is the default now, this environment variable is thus deprecated. (function operator())
-0: [default0]:>>> done with compiling and loading fused kernels. Compilation time: 6.287 seconds
-0: [default0]:WARNING:megatron.core.pipeline_parallel.utils:Set CPU affinity for all GPUs for optimal host-device transfer performance
+0: [default0]:>>> done with compiling and loading fused kernels. Compilation time: 6.271 seconds
 0: [default3]:INFO:megatron.core.timers:(min, max) time across ranks (ms):
-0: [default3]:    startup-program-entry-spread ...................: (0.40, 1.69)
-0: [default3]:    startup-library-setup ..........................: (21431.19, 21432.88)
-0: [default3]:    startup-program-setup ..........................: (48.14, 48.55)
+0: [default3]:    startup-program-entry-spread ...................: (1.57, 3.36)
+0: [default3]:    startup-library-setup ..........................: (26353.22, 26356.50)
+0: [default3]:    startup-program-setup ..........................: (49.10, 49.22)
+0: [default3]:    startup-in-process-setup .......................: (0.00, 0.00)
+0: [default3]:    startup-in-job-setup ...........................: (32.33, 33.08)
+0: [default3]:    startup-initialize-megatron ....................: (6629.53, 6630.51)
+0: [default3]:    startup-set-jit-fusion-options .................: (2936.85, 3249.87)
+0: [default3]:    all-reduce-start-timestamps-tensor .............: (0.84, 314.06)
+0: [default3]:    startup-megatron-init-local ....................: (9913.52, 9913.71)
+0: [default3]:    startup-megatron-init-global ...................: (36319.28, 36319.32)
 0: [default0]:/usr/local/lib/python3.12/dist-packages/torch/distributed/c10d_logger.py:83: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
 0: [default0]:  return func(*args, **kwargs)
-0: [default3]:    startup-in-process-setup .......................: (0.00, 0.00)
-0: [default3]:    startup-in-job-setup ...........................: (33.26, 34.11)
-0: [default3]:    startup-initialize-megatron ....................: (6622.44, 6623.51)
-0: [default3]:    startup-set-jit-fusion-options .................: (2473.65, 2617.60)
-0: [default3]:    all-reduce-start-timestamps-tensor .............: (0.87, 144.82)
-0: [default3]:    startup-megatron-init-local ....................: (9274.91, 9275.23)
-0: [default3]:    startup-megatron-init-global ...................: (30756.33, 30756.39)
-0: [default0]:time to initialize megatron (seconds): 9.714
-0: [default0]:[after in-process setup and before initialize_megatron] datetime: 2026-05-01 10:07:19.681003 
-0: [default0]:[after in-job setup and before initialize_megatron] datetime: 2026-05-01 10:07:19.715116 
-0: [default0]:[before library-setup] datetime: 2026-05-01 10:06:58.199578
-0: [default0]:[after library-setup] datetime: 2026-05-01 10:07:19.632457
-0: [default0]:[before megatron-init] datetime: 2026-05-01 10:07:19.681002
-0: [default0]:[after megatron is initialized] datetime: 2026-05-01 10:07:28.958094 
+0: [default0]:time to initialize megatron (seconds): 10.315
+0: [default0]:[after in-process setup and before initialize_megatron] datetime: 2026-05-12 19:32:54.220872 
+0: [default0]:[after in-job setup and before initialize_megatron] datetime: 2026-05-12 19:32:54.253769 
+0: [default0]:[before library-setup] datetime: 2026-05-12 19:32:27.815194
+0: [default0]:[after library-setup] datetime: 2026-05-12 19:32:54.171693
+0: [default0]:[before megatron-init] datetime: 2026-05-12 19:32:54.220871
+0: [default0]:[after megatron is initialized] datetime: 2026-05-12 19:33:04.137017 
 0: [default0]:building GPT model ...
-0: [default3]: > number of parameters on (tensor, pipeline) model parallel rank (3, 0): 4811888640
-0: [default1]: > number of parameters on (tensor, pipeline) model parallel rank (1, 0): 4811888640
-0: [default0]: > number of parameters on (tensor, pipeline) model parallel rank (0, 0): 4811888640
+0: [default1]: > number of parameters on (tensor, pipeline) model parallel rank (1, 0): 5760670720
+0: [default3]: > number of parameters on (tensor, pipeline) model parallel rank (3, 0): 5760670720
+0: [default2]: > number of parameters on (tensor, pipeline) model parallel rank (2, 0): 5760670720
+0: [default0]: > number of parameters on (tensor, pipeline) model parallel rank (0, 0): 5760670720
 0: [default0]:INFO:megatron.core.distributed.distributed_data_parallel:Setting up DistributedDataParallel with config DistributedDataParallelConfig(grad_reduce_in_fp32=False, overlap_grad_reduce=True, overlap_param_gather=True, align_param_gather=False, use_distributed_optimizer=True, num_distributed_optimizer_instances=1, check_for_nan_in_grad=False, check_for_large_grads=False, bucket_size=40000000, pad_buckets_for_high_nccl_busbw=False, reduce_scatter_with_fp32_accumulation=False, average_in_collective=False, fp8_param_gather=False, reuse_grad_buf_for_mxfp8_param_ag=False, use_megatron_fsdp=False, use_custom_fsdp=False, data_parallel_sharding_strategy='no_shard', gradient_reduce_div_fusion=True, suggested_communication_unit_size=None, preserve_fp32_weights=True, keep_fp8_transpose_cache=False, nccl_ub=False, fsdp_double_buffer=False, outer_dp_sharding_strategy='no_shard', disable_symmetric_registration=False, fsdp_
 0: manual_registration=False, delay_wgrad_compute=False)
-0: [default2]: > number of parameters on (tensor, pipeline) model parallel rank (2, 0): 4811888640
 0: [default0]:INFO:megatron.core.distributed.param_and_grad_buffer:Number of buckets for gradient all-reduce / reduce-scatter: 81
-0: [default0]:Params for bucket 1 (77856768 elements, 77856768 padded size):
+0: [default0]:Params for bucket 1 (90832896 elements, 90832896 padded size):
 0: [default0]:	module.output_layer.weight
-0: [default0]:Params for bucket 2 (94377984 elements, 94377984 padded size):
+0: [default0]:Params for bucket 2 (110107648 elements, 110107648 padded size):
 0: [default0]:	module.decoder.final_layernorm.weight
 0: [default0]:	module.decoder.layers.39.mlp.linear_fc1.weight
 0: [default0]:	module.decoder.layers.39.mlp.linear_fc2.weight
-0: [default0]:Params for bucket 3 (53489664 elements, 53489664 padded size):
-0: [default0]:	module.decoder.layers.39.self_attention.linear_proj.weight
-0: [default0]:	module.decoder.layers.38.mlp.linear_fc2.weight
+0: [default0]:Params for bucket 3 (66074624 elements, 66074624 padded size):
 0: [default0]:	module.decoder.layers.39.self_attention.linear_qkv.layer_norm_weight
-0: [default0]:	module.decoder.layers.39.mlp.linear_fc1.layer_norm_weight
+0: [default0]:	module.decoder.layers.38.mlp.linear_fc2.weight
 0: [default0]:	module.decoder.layers.39.self_attention.linear_qkv.weight
-0: [default0]:Params for bucket 4 (62914560 elements, 62914560 padded size):
+0: [default0]:	module.decoder.layers.39.self_attention.linear_proj.weight
+0: [default0]:	module.decoder.layers.39.mlp.linear_fc1.layer_norm_weight
+0: [default0]:Params for bucket 4 (73400320 elements, 73400320 padded size):
 0: [default0]:	module.decoder.layers.38.mlp.linear_fc1.weight
-0: [default0]:Params for bucket 5 (53489664 elements, 53489664 padded size):
+0: [default0]:Params for bucket 5 (66074624 elements, 66074624 padded size):
 0: [default0]:	module.decoder.layers.38.self_attention.linear_proj.weight
-0: [default0]:	module.decoder.layers.38.self_attention.linear_qkv.weight
-0: [default0]:	module.decoder.layers.38.mlp.linear_fc1.layer_norm_weight
 0: [default0]:	module.decoder.layers.37.mlp.linear_fc2.weight
 0: [default0]:	module.decoder.layers.38.self_attention.linear_qkv.layer_norm_weight
-0: [default0]:Params for bucket 6 (62914560 elements, 62914560 padded size):
+0: [default0]:	module.decoder.layers.38.self_attention.linear_qkv.weight
+0: [default0]:	module.decoder.layers.38.mlp.linear_fc1.layer_norm_weight
+0: [default0]:Params for bucket 6 (73400320 elements, 73400320 padded size):
 0: [default0]:	module.decoder.layers.37.mlp.linear_fc1.weight
-0: [default0]:Params for bucket 7 (53489664 elements, 53489664 padded size):
+0: [default0]:Params for bucket 7 (66074624 elements, 66074624 padded size):
 0: [default0]:	module.decoder.layers.37.self_attention.linear_qkv.layer_norm_weight
 0: [default0]:	module.decoder.layers.37.self_attention.linear_qkv.weight
-0: [default0]:	module.decoder.layers.36.mlp.linear_fc2.weight
-0: [default0]:	module.decoder.layers.37.mlp.linear_fc1.layer_norm_weight
 0: [default0]:	module.decoder.layers.37.self_attention.linear_proj.weight
-0: [default0]:Params for bucket 8 (62914560 elements, 62914560 padded size):
+0: [default0]:	module.decoder.layers.37.mlp.linear_fc1.layer_norm_weight
+0: [default0]:	module.decoder.layers.36.mlp.linear_fc2.weight
+0: [default0]:Params for bucket 8 (73400320 elements, 73400320 padded size):
 0: [default0]:	module.decoder.layers.36.mlp.linear_fc1.weight
-0: [default0]:Params for bucket 9 (53489664 elements, 53489664 padded size):
+0: [default0]:Params for bucket 9 (66074624 elements, 66074624 padded size):
 0: [default0]:	module.decoder.layers.36.mlp.linear_fc1.layer_norm_weight
-0: [default0]:	module.decoder.layers.36.self_attention.linear_proj.weight
 0: [default0]:	module.decoder.layers.36.self_attention.linear_qkv.layer_norm_weight
 0: [default0]:	module.decoder.layers.36.self_attention.linear_qkv.weight
+0: [default0]:	module.decoder.layers.36.self_attention.linear_proj.weight
 0: [default0]:	module.decoder.layers.35.mlp.linear_fc2.weight
-0: [default0]:Params for bucket 10 (62914560 elements, 62914560 padded size):
+0: [default0]:Params for bucket 10 (73400320 elements, 73400320 padded size):
 0: [default0]:	module.decoder.layers.35.mlp.linear_fc1.weight
-0: [default0]:Params for bucket 11 (53489664 elements, 53489664 padded size):
+0: [default0]:Params for bucket 11 (66074624 elements, 66074624 padded size):
 0: [default0]:	module.decoder.layers.35.mlp.linear_fc1.layer_norm_weight
-0: [default0]:	module.decoder.layers.35.self_attention.linear_qkv.layer_norm_weight
+0: [default0]:	module.decoder.layers.35.self_attention.linear
+0: _qkv.weight
 0: [default0]:	module.decoder.layers.35.self_attention.linear_proj.weight
-0: [default0]:	module.decoder.layers.35.self_attention.linear_qkv.weight
 0: [default0]:	module.decoder.layers.34.mlp.linear_fc2.weight
-0: [default0]:Params for bucket 12 (62914560 elements, 62914560 padded size):
+0: [default0]:	module.decoder.layers.35.self_attention.linear_qkv.layer_norm_weight
+0: [default0]:Params for bucket 12 (73400320 elements, 73400320 padded size):
 0: [default0]:	module.decoder.layers.34.mlp.linear_fc1.weight
-0: [default0]:Params for bucket 13 (53489664 elements, 53489664 padded size):
-0: [default0]:	module.decoder.layers.34.self_att
-0: ention.linear_qkv.weight
-0: [default0]:	module.decoder.layers.33.mlp.linear_fc2.weight
-0: [default0]:	module.decoder.layers.34.self_attention.linear_proj.weight
+0: [default0]:Params for bucket 13 (66074624 elements, 66074624 padded size):
 0: [default0]:	module.decoder.layers.34.mlp.linear_fc1.layer_norm_weight
+0: [default0]:	module.decoder.layers.33.mlp.linear_fc2.weight
 0: [default0]:	module.decoder.layers.34.self_attention.linear_qkv.layer_norm_weight
-0: [default0]:Params for bucket 14 (62914560 elements, 62914560 padded size):
+0: [default0]:	module.decoder.layers.34.self_attention.linear_proj.weight
+0: [default0]:	module.decoder.layers.34.self_attention.linear_qkv.weight
+0: [default0]:Params for bucket 14 (73400320 elements, 73400320 padded size):
 0: [default0]:	module.decoder.layers.33.mlp.linear_fc1.weight
-0: [default0]:Params for bucket 15 (53489664 elements, 53489664 padded size):
-0: [default0]:	module.decoder.layers.33.self_attention.linear_proj.weight
-0: [default0]:	module.decoder.layers.33.self_attention.linear_qkv.layer_norm_weight
-0: [default0]:	module.decoder.layers.33.self_attention.linear_qkv.weight
+0: [default0]:Params for bucket 15 (66074624 elements, 66074624 padded size):
 0: [default0]:	module.decoder.layers.33.mlp.linear_fc1.layer_norm_weight
+0: [default0]:	module.decoder.layers.33.self_attention.linear_qkv.weight
+0: [default0]:	module.decoder.layers.33.self_attention.linear_proj.weight
 0: [default0]:	module.decoder.layers.32.mlp.linear_fc2.weight
-0: [default0]:Params for bucket 16 (62914560 elements, 62914560 padded size):
+0: [default0]:	module.decoder.layers.33.self_attention.linear_qkv.layer_norm_weight
+0: [default0]:Params for bucket 16 (73400320 elements, 73400320 padded size):
 0: [default0]:	module.decoder.layers.32.mlp.linear_fc1.weight
-0: [default0]:Params for bucket 17 (53489664 elements, 53489664 padded size):
+0: [default0]:Params for bucket 17 (66074624 elements, 66074624 padded size):
 0: [default0]:	module.decoder.layers.32.mlp.linear_fc1.layer_norm_weight
-0: [default0]:	module.decoder.layers.32.self_attention.linear_proj.weight
-0: [default0]:	module.decoder.layers.31.mlp.linear_fc2.weight
 0: [default0]:	module.decoder.layers.32.self_attention.linear_qkv.weight
-0: [default0]:	module.decoder.layers.32.self_attention.linear_qkv.layer_norm_weight
-0: [default0]:Params for bucket 18 (62914560 elements, 62914560 padded size):
+0: [default0]:	module.decoder.layers.32.self_attention.linear_proj.weight
+0: [default0]:	module.decoder.layers.32.self_at
+0: tention.linear_qkv.layer_norm_weight
+0: [default0]:	module.decoder.layers.31.mlp.linear_fc2.weight
+0: [default0]:Params for bucket 18 (73400320 elements, 73400320 padded size):
 0: [default0]:	module.decoder.layers.31.mlp.linear_fc1.weight
-0: [default0]:Params for bucket 19 (53489664 elements
-0: , 53489664 padded size):
+0: [default0]:Params for bucket 19 (66074624 elements, 66074624 padded size):
 0: [default0]:	module.decoder.layers.31.mlp.linear_fc1.layer_norm_weight
-0: [default0]:	module.decoder.layers.31.self_attention.linear_qkv.layer_norm_weight
 0: [default0]:	module.decoder.layers.31.self_attention.linear_qkv.weight
-0: [default0]:	module.decoder.layers.30.mlp.linear_fc2.weight
 0: [default0]:	module.decoder.layers.31.self_attention.linear_proj.weight
-0: [default0]:Params for bucket 20 (62914560 elements, 62914560 padded size):
+0: [default0]:	module.decoder.layers.30.mlp.linear_fc2.weight
+0: [default0]:	module.decoder.layers.31.self_attention.linear_qkv.layer_norm_weight
+0: [default0]:Params for bucket 20 (73400320 elements, 73400320 padded size):
 0: [default0]:	module.decoder.layers.30.mlp.linear_fc1.weight
-0: [default0]:Params for bucket 21 (53489664 elements, 53489664 padded size):
-0: [default0]:	module.decoder.layers.29.mlp.linear_fc2.weight
-0: [default0]:	module.decoder.layers.30.self_attention.linear_proj.weight
+0: [default0]:Params for bucket 21 (66074624 elements, 66074624 padded size):
 0: [default0]:	module.decoder.layers.30.mlp.linear_fc1.layer_norm_weight
 0: [default0]:	module.decoder.layers.30.self_attention.linear_qkv.weight
+0: [default0]:	module.decoder.layers.30.self_attention.linear_proj.weight
+0: [default0]:	module.decoder.layers.29.mlp.linear_fc2.weight
 0: [default0]:	module.decoder.layers.30.self_attention.linear_qkv.layer_norm_weight
-0: [default0]:Params for bucket 22 (62914560 elements, 62914560 padded size):
+0: [default0]:Params for bucket 22 (73400320 elements, 73400320 padded size):
 0: [default0]:	module.decoder.layers.29.mlp.linear_fc1.weight
-0: [default0]:Params for bucket 23 (53489664 elements, 53489664 padded size):
+0: [default0]:Params for bucket 23 (66074624 elements, 66074624 padded size):
 0: [default0]:	module.decoder.layers.29.mlp.linear_fc1.layer_norm_weight
-0: [default0]:	module.decoder.layers.29.self_attention.linear_qkv.weight
-0: [default0]:	module.decoder.layers.28.mlp.linear_fc2.weight
 0: [default0]:	module.decoder.layers.29.self_attention.linear_qkv.layer_norm_weight
+0: [default0]:	module.decoder.layers.28.mlp.linear_fc2.weight
+0: [default0]:	module.decoder.layers.29.self_attention.linear_qkv.weight
 0: [default0]:	module.decoder.layers.29.self_attention.linear_proj.weight
-0: [default0]:Params for bucket 24 (62914560 elements, 62914560 padded size):
+0: [default0]:Params for bucket 24 (73400320 elements, 73400320 padded size):
 0: [default0]:	module.decoder.layers.28.mlp.linear_fc1.weight
-0: [default0]:Params for bucket 25 (53489664 elements, 53489664 padded size):
+0: [default0]:Params for bucket 25 (66074624 elements, 66074624 padded size):
 0: [default0]:	module.decoder.layers.28.mlp.linear_fc1.layer_norm_weight
-0: [default0]:	module.decoder.layers.27.mlp.linear_fc2.weight
 0: [default0]:	module.decoder.layers.28.self_attention.linear_qkv.weight
-0: [default0]:	module.decoder.layers.28.self_attention.linear_qkv.layer_norm_weight
 0: [default0]:	module.decoder.layers.28.self_attention.linear_proj.weight
-0: [default0]:Params for bucket 26 (62914560 elements, 62914560 padded size):
+0: [default0]:	module.decoder.layers.27.mlp.linear_fc2.weight
+0: [default0]:	module.decoder.layers.28.self_attention.linear_qkv.layer_norm_weight
+0: [default0]:Params for bucket 26 (73400320 elements, 73400320 padded size):
 0: [default0]:	module.decoder.layers.27.mlp.linear_fc1.weight
-0: [default0]:Params for bucket 27 (53489664 elements, 53489664 padded size):
-0: [default0]:	module.decoder.layers.26.mlp.linear_fc2.weight
+0: [default0]:Params for bucket 27 (66074624 elements, 66074624 padded size):
 0: [default0]:	module.decoder.layers.27.mlp.linear_fc1.layer_norm_weight
-0: [default0]:	module.decoder.layers.27.self_attention.linear_qkv.weight
 0: [default0]:	module.decoder.layers.27.self_attention.linear_proj.weight
+0: [default0]:	module.decoder.layers.26.mlp.linear_fc2.weight
 0: [default0]:	module.decoder.layers.27.self_attention.linear_qkv.layer_norm_weight
-0: [default0]:Params for bucket 28 (62914560 elements, 62914560 padded size):
+0: [default0]:	module.decoder.layers.27.self_attention.linear_qkv.weight
+0: [default0]:Params for bucket 28 (73400320 elements, 73400320 padded size):
 0: [default0]:	module.decoder.layers.26.mlp.linear_fc1.weight
-0: [default0]:Params for bucket 29 (53489664 elements, 53489664 padded size):
-0: [default0]:	module.decoder.layers.26.self_attention.linear_qkv.weight
-0: [default0]:	module.decoder.layers.25.mlp.linear_fc2.weight
-0: [default0]:	module.decoder.layers.26.self_attention.linear_qkv.layer_norm_weight
+0: [default0]:Params for bucket 29 (66074624 elements, 66074624 padded size):
 0: [default0]:	module.decoder.layers.26.mlp.linear_fc1.layer_norm_weight
+0: [default0]:	module.decoder.layers.26.self_attention.linear_qkv.layer_norm_weight
+0: [default0]:	module.decoder.layers.26.self_attention.linear_qkv.weight
 0: [default0]:	module.decoder.layers.26.self_attention.linear_proj.weight
-0: [default0]:Params for bucket 30 (62914560 elements, 62914560 padded size):
+0: [default0]:	module.decoder.layers.25.mlp.linear_fc2.weight
+0: [default0]:Params for bucket 30 (73400320 elements, 73400320 padded size):
 0: [default0]:	module.decoder.layers.25.mlp.linear_fc1.weight
-0: [default0]:Params for bucket 31 (53489664 elements, 53489664 padded size):
+0: [default0]:Params for bucket 31 (66074624 elements, 66074624 padded size):
 0: [default0]:	module.decoder.layers.25.mlp.linear_fc1.layer_norm_weight
-0: [default0]:	module.decoder.layers.25.self_attention.linear_qkv.weight
 0: [default0]:	module.decoder.layers.24.mlp.linear_fc2.weight
-0: [default0]:	module.decoder.layers.25.self_attention.linear_proj.weight
+0: [default0]:	module.decoder.layers.25.self_attention.linear_qkv.weight
 0: [default0]:	module.decoder.layers.25.self_attention.linear_qkv.layer_norm_weight
-0: [default0]:Params for bucket 32 (62914560 elements, 62914560 padded size):
+0: [default0]:	module.decoder.layers.25.self_attention.linear_proj.weight
+0: [default0]:Params for bucket 32 (73400320 elements, 73400320 padded size):
 0: [default0]:	module.decoder.layers.24.mlp.linear_fc1.weight
-0: [default0]:Params for bucket 33 (53489664 elements, 53489664 padded size):
+0: [default0]:Params for bucket 33 (66074624 elements, 66074624 padded size):
+0: [default0]:	module.decoder.layers.24.self_attention.linear_proj.weight
 0: [default0]:	module.decoder.layers.24.mlp.linear_fc1.layer_norm_weight
 0: [default0]:	module.decoder.layers.24.self_attention.linear_qkv.weight
-0: [default0]:	module.decoder.layers.23.mlp.linear_fc2.weight
-0: [default0]:	module.decoder.layers.24.self_attention.linear_proj.weight
 0: [default0]:	module.decoder.layers.24.self_attention.linear_qkv.layer_norm_weight
-0: [default0]:Params for bucket 34 (62914560 elements, 62914560 padded size):
+0: [default0]:	module.decoder.layers.23.mlp.linear_fc2.weight
+0: [default0]:Params for bucket 34 (73400320 elements, 73400320 padded size):
 0: [default0]:	module.decoder.layers.23.mlp.linear_fc1.weight
-0: [default0]:Params for bucket 35 (53489664 elements, 53489664 padded size):
+0: [default0]:Params for bucket 35 (66074624 elements, 66074624 padded size):
 0: [default0]:	module.decoder.layers.23.mlp.linear_fc1.layer_norm_weight
-0: [default0]:	module.decoder.layers.23.self_attention.linear_qkv.weight
-0: [default0]:	module.decoder.layers.23.self_attention.linear_proj.weight
 0: [default0]:	module.decoder.layers.23.self_attention.linear_qkv.layer_norm_weight
+0: [default0]:	module.decoder.layers.23.self_attention.linear_proj.weight
+0: [default0]:	module.decoder.layers.23.self_attention.linear_qkv.weight
 0: [default0]:	module.decoder.layers.22.mlp.linear_fc2.weight
-0: [default0]:Params for bucket 36 (62914560 elements, 62914560 padded size):
+0: [default0]:Params for bucket 36 (73400320 elements, 73400320 padded size):
 0: [default0]:	module.decoder.layers.22.mlp.linear_fc1.weight
-0: [default0]:Params for bucket 37 (53489664 elements, 53489664 padded size):
+0: [default0]:Params for bucket 37 (66074624 elements, 66074624 padded size):
 0: [default0]:	module.decoder.layers.22.mlp.linear_fc1.layer_norm_weight
-0: [default0]:	module.decoder.layers.22.self_attention.linear_qkv.layer_norm_weight
-0: [default0]:	module.decoder.layers.21.mlp.linear_fc2.weight
 0: [default0]:	module.decoder.layers.22.self_attention.linear_proj.weight
+0: [default0]:	module.decoder.layers.21.mlp.linear_fc2.weight
+0: [default0]:	module.decoder.layers.22.self_attention.linear_qkv.layer_norm_weight
 0: [default0]:	module.decoder.layers.22.self_attention.linear_qkv.weight
-0: [default0]:Params for bucket 38 (62914560 elements, 62914560 padded size):
+0: [default0]:Params for bucket 38 (73400320 elements, 73400320 padded size):
 0: [default0]:	module.decoder.layers.21.mlp.linear_fc1.weight
-0: [default0]:Params for bucket 39 (53489664 elements, 53489664 padded size):
+0: [default0]:Params for bucket 39 (66074624 elements, 66074624 padded size):
 0: [default0]:	module.decoder.layers.21.mlp.linear_fc1.layer_norm_weight
-0: [default0]:	module.decoder.layers.21.self_attention.linear_proj.weight
 0: [default0]:	module.decoder.layers.21.self_attention.linear_qkv.weight
-0: [default0]:	module.decoder.layers.20.mlp.linear_fc2.weight
+0: [default0]:	module.decoder.layers.21.self_attention.linear_proj.weight
 0: [default0]:	module.decoder.layers.21.self_attention.linear_qkv.layer_norm_weight
-0: [default0]:Params for bucket 40 (62914560 elements, 62914560 padded size):
+0: [default0]:	module.decoder.layers.20.mlp.linear_fc2.weight
+0: [default0]:Params for bucket 40 (73400320 elements, 73400320 padded size):
 0: [default0]:	module.decoder.layers.20.mlp.linear_fc1.weight
-0: [default0]:Params for bucket 41 (53489664 elements, 53489664 padded size):
+0: [default0]:Params for bucket 41 (66074624 elements, 66074624 padded size):
 0: [default0]:	module.decoder.layers.20.mlp.linear_fc1.layer_norm_weight
-0: [default0]:	module.decoder.layers.20.self_attention.linear_proj.weight
 0: [default0]:	module.decoder.layers.20.self_attention.linear_qkv.layer_norm_weight
+0: [default0]:	module.decoder.layers.20.self_attention.linear_proj.weight
 0: [default0]:	module.decoder.layers.19.mlp.linear_fc2.weight
 0: [default0]:	module.decoder.layers.20.self_attention.linear_qkv.weight
-0: [default0]:Params for bucket 42 (62914560 elements, 62914560 padded size):
+0: [default0]:Params for bucket 42 (73400320 elements, 73400320 padded size):
 0: [default0]:	module.decoder.layers.19.mlp.linear_fc1.weight
-0: [default0]:Params for bucket 43 (53489664 elements, 53489664 padded size):
+0: [default0]:Params for bucket 43 (66074624 elements, 66074624 padded size):
+0: [default0]:	module.decoder.layers.19.mlp.linear_fc1.layer_norm_weight
+0: [default0]:	module.decoder.layers.18.mlp.linear_fc2.weight
 0: [default0]:	module.decoder.layers.19.self_attention.linear_proj.weight
 0: [default0]:	module.decoder.layers.19.self_attention.linear_qkv.weight
-0: [default0]:	module.decoder.layers.18.mlp.linear_fc2.weight
 0: [default0]:	module.decoder.layers.19.self_attention.linear_qkv.layer_norm_weight
-0: [default0]:	module.decoder.layers.19.mlp.linear_fc1.layer_norm_weight
-0: [default0]:Params for bucket 44 (62914560 elements, 62914560 padded size):
+0: [default0]:Params for bucket 44 (73400320 elements, 73400320 padded size):
 0: [default0]:	module.decoder.layers.18.mlp.linear_fc1.weight
-0: [default0]:Params for bucket 45 (53489664 elements, 53489664 padded size):
+0: [default0]:Params for bucket 45 (66074624 elements, 66074624 padded size):
 0: [default0]:	module.decoder.layers.18.mlp.linear_fc1.layer_norm_weight
-0: [default0]:	module.decoder.layers.18.self_attention.linear_qkv.weight
-0: [default0]:	module.decoder.layers.18.self_attention.linear_qkv.layer_norm_weight
-0: [default0]:	module.decoder.layers.17.mlp.linear_fc2.weight
 0: [default0]:	module.decoder.layers.18.self_attention.linear_proj.weight
-0: [default0]:Params for bucket 46 (62914
-0: 560 elements, 62914560 padded size):
+0: [default0]:	module.decoder.layers.17.mlp.linear_fc2.weight
+0: [default0]:	module.decoder.layers.18.self_attention.lin
+0: ear_qkv.layer_norm_weight
+0: [default0]:	module.decoder.layers.18.self_attention.linear_qkv.weight
+0: [default0]:Params for bucket 46 (73400320 elements, 73400320 padded size):
 0: [default0]:	module.decoder.layers.17.mlp.linear_fc1.weight
-0: [default0]:Params for bucket 47 (53489664 elements, 53489664 padded size):
-0: [default0]:	module.decoder.layers.17.self_attention.linear_proj.weight
-0: [default0]:	module.decoder.layers.17.self_attention.linear_qkv.weight
-0: [default0]:	module.decoder.layers.17.self_attention.linear_qkv.layer_norm_weight
+0: [default0]:Params for bucket 47 (66074624 elements, 66074624 padded size):
 0: [default0]:	module.decoder.layers.17.mlp.linear_fc1.layer_norm_weight
+0: [default0]:	module.decoder.layers.17.self_attention.linear_proj.weight
+0: [default0]:	module.decoder.layers.17.self_attention.linear_qkv.layer_norm_weight
 0: [default0]:	module.decoder.layers.16.mlp.linear_fc2.weight
-0: [default0]:Params for bucket 48 (62914560 elements, 62914560 padded size):
+0: [default0]:	module.decoder.layers.17.self_attention.linear_qkv.weight
+0: [default0]:Params for bucket 48 (73400320 elements, 73400320 padded size):
 0: [default0]:	module.decoder.layers.16.mlp.linear_fc1.weight
-0: [default0]:Params for bucket 49 (53489664 elements, 53489664 padded size):
-0: [default0]:	module.decoder.layers.16.mlp.linear_fc1.layer_norm_weight
-0: [default0]:	module.decoder.layers.16.self_attention.linear_proj.weight
-0: [default0]:	module.decoder.layers.15.mlp.linear_fc2.weight
+0: [default0]:Params for bucket 49 (66074624 elements, 66074624 padded size):
 0: [default0]:	module.decoder.layers.16.self_attention.linear_qkv.layer_norm_weight
+0: [default0]:	module.decoder.layers.16.mlp.linear_fc1.layer_norm_weight
 0: [default0]:	module.decoder.layers.16.self_attention.linear_qkv.weight
-0: [default0]:Params for bucket 50 (62914560 elements, 62914560 padded size):
+0: [default0]:	module.decoder.layers.15.mlp.linear_fc2.weight
+0: [default0]:	module.decoder.layers.16.self_attention.linear_proj.weight
+0: [default0]:Params for bucket 50 (73400320 elements, 73400320 padded size):
 0: [default0]:	module.decoder.layers.15.mlp.linear_fc1.weight
-0: [default0]:Params for bucket 51 (53489664 elements, 53489664 padded size):
+0: [default0]:Params for bucket 51 (66074624 elements, 66074624 padded size):
 0: [default0]:	module.decoder.layers.15.mlp.linear_fc1.layer_norm_weight
-0: [default0]:	module.decoder.layers.15.self_attention.linear_qkv.layer_norm_weight
 0: [default0]:	module.decoder.layers.15.self_attention.linear_qkv.weight
-0: [default0]:	module.decoder.layers.15.self_attention.linear_proj.weight
 0: [default0]:	module.decoder.layers.14.mlp.linear_fc2.weight
-0: [default0]:Params for bucket 52 (62914560 elements, 62914560 padded size):
+0: [default0]:	module.decoder.layers.15.self_attention.linear_proj.weight
+0: [default0]:	module.decoder.layers.15.self_attention.linear_qkv.layer_norm_weight
+0: [default0]:Params for bucket 52 (73400320 elements, 73400320 padded size):
 0: [default0]:	module.decoder.layers.14.mlp.linear_fc1.weight
-0: [default0]:Params for bucket 53 (53489664 elements, 53489664 padded size):
+0: [default0]:Params for bucket 53 (66074624 elements, 66074624 padded size):
 0: [default0]:	module.decoder.layers.14.mlp.linear_fc1.layer_norm_weight
-0: [default0]:	module.decoder.layers.14.self_attention.linear_qkv.weight
 0: [default0]:	module.decoder.layers.14.self_attention.linear_proj.weight
 0: [default0]:	module.decoder.layers.14.self_attention.linear_qkv.layer_norm_weight
+0: [default0]:	module.decoder.layers.14.self_attention.linear_qkv.weight
 0: [default0]:	module.decoder.layers.13.mlp.linear_fc2.weight
-0: [default0]:Params for bucket 54 (62914560 elements, 62914560 padded size):
+0: [default0]:Params for bucket 54 (73400320 elements, 73400320 padded size):
 0: [default0]:	module.decoder.layers.13.mlp.linear_fc1.weight
-0: [default0]:Params for bucket 55 (53489664 elements, 53489664 padded size):
+0: [default0]:Params for bucket 55 (66074624 elements, 66074624 padded size):
 0: [default0]:	module.decoder.layers.13.mlp.linear_fc1.layer_norm_weight
 0: [default0]:	module.decoder.layers.12.mlp.linear_fc2.weight
-0: [default0]:	module.decoder.layers.13.self_attention.linear_qkv.weight
 0: [default0]:	module.decoder.layers.13.self_attention.linear_proj.weight
 0: [default0]:	module.decoder.layers.13.self_attention.linear_qkv.layer_norm_weight
-0: [default0]:Params for bucket 56 (62914560 elements, 62914560 padded size):
+0: [default0]:	module.decoder.layers.13.self_attention.linear_qkv.weight
+0: [default0]:Params for bucket 56 (73400320 elements, 73400320 padded size):
 0: [default0]:	module.decoder.layers.12.mlp.linear_fc1.weight
-0: [default0]:Params for bucket 57 (53489664 elements, 53489664 padded size):
+0: [default0]:Params for bucket 57 (66074624 elements, 66074624 padded size):
 0: [default0]:	module.decoder.layers.12.mlp.linear_fc1.layer_norm_weight
-0: [default0]:	module.decoder.layers.12.self_attention.linear_qkv.weight
-0: [default0]:	module.decoder.layers.12.self_attention.linear_proj.weight
 0: [default0]:	module.decoder.layers.11.mlp.linear_fc2.weight
+0: [default0]:	module.decoder.layers.12.self_attention.linear_qkv.weight
 0: [default0]:	module.decoder.layers.12.self_attention.linear_qkv.layer_norm_weight
-0: [default0]:Params for bucket 58 (62914560 elements, 62914560 padded size):
+0: [default0]:	module.decoder.layers.12.self_attention.linear_proj.weight
+0: [default0]:Params for bucket 58 (73400320 elements, 73400320 padded size):
 0: [default0]:	module.decoder.layers.11.mlp.linear_fc1.weight
-0: [default0]:Params for bucket 59 (53489664 elements, 53489664 padded size):
+0: [default0]:Params for bucket 59 (66074624 elements, 66074624 padded size):
 0: [default0]:	module.decoder.layers.11.mlp.linear_fc1.layer_norm_weight
-0: [default0]:	module.decoder.layers.10.mlp.linear_fc2.weight
 0: [default0]:	module.decoder.layers.11.self_attention.linear_qkv.layer_norm_weight
-0: [default0]:	module.decoder.layers.11.self_attention.linear_proj.weight
+0: [default0]:	module.decoder.layers.10.mlp.linear_fc2.weight
 0: [default0]:	module.decoder.layers.11.self_attention.linear_qkv.weight
-0: [default0]:Params for bucket 60 (62914560 elements, 62914560 padded size):
+0: [default0]:	module.decoder.layers.11.self_attention.linear_proj.weight
+0: [default0]:Params for bucket 60 (73400320 elements, 73400320 padded size):
 0: [default0]:	module.decoder.layers.10.mlp.linear_fc1.weight
-0: [default0]:Params for bucket 61 (53489664 elements, 53489664 padded size):
+0: [default0]:Params for bucket 61 (66074624 elements, 66074624 padded size):
 0: [default0]:	module.decoder.layers.10.mlp.linear_fc1.layer_norm_weight
 0: [default0]:	module.decoder.layers.10.self_attention.linear_qkv.weight
+0: [default0]:	module.decoder.layers.10.self_attention.linear_qkv.layer_norm_weight
 0: [default0]:	module.decoder.layers.10.self_attention.linear_proj.weight
 0: [default0]:	module.decoder.layers.9.mlp.linear_fc2.weight
-0: [default0]:	module.decoder.layers.10.self_attention.linear_qkv.layer_norm_weight
-0: [default0]:Params for bucket 62 (62914560 elements, 62914560 padded size):
+0: [default0]:Params for bucket 62 (73400320 elements, 73400320 padded size):
 0: [default0]:	module.decoder.layers.9.mlp.linear_fc1.weight
-0: [default0]:Params for bucket 63 (53489664 elements, 53489664 padded size):
+0: [default0]:Params for bucket 63 (66074624 elements, 66074624 padded size):
 0: [default0]:	module.decoder.layers.9.mlp.linear_fc1.layer_norm_weight
-0: [default0]:	module.decoder.layers.9.self_attention.linear_qkv.weight
-0: [default0]:	module.decoder.layers.9.self_attention.linear_proj.weight
 0: [default0]:	module.decoder.layers.8.mlp.linear_fc2.weight
 0: [default0]:	module.decoder.layers.9.self_attention.linear_qkv.layer_norm_weight
-0: [default0]:Params for bucket 64 (62914560 elements, 62914560 padded size):
+0: [default0]:	module.decoder.layers.9.self_attention.linear_qkv.weight
+0: [default0]:	module.decoder.layers.9.self_attention.linear_proj.weight
+0: [default0]:Params for bucket 64 (73400320 elements, 73400320 padded size):
 0: [default0]:	module.decoder.layers.8.mlp.linear_fc1.weight
-0: [default0]:Params for bucket 65 (53489664 elements, 53489664 padded size):
-0: [default0]:	module.decoder.layers.8.mlp.linear_fc1.layer_norm_weight
-0: [default0]:	module.decoder.layers.8.self_attention.linear_qkv.layer_norm_weight
-0: [default0]:	module.decoder.layers.7.mlp.linear_fc2.weight
+0: [default0]:Params for bucket 65 (66074624 elements, 66074624 padded size):
 0: [default0]:	module.decoder.layers.8.self_attention.linear_qkv.weight
+0: [default0]:	module.decoder.layers.8.self_attention.linear_qkv.layer_norm_weight
 0: [default0]:	module.decoder.layers.8.self_attention.linear_proj.weight
-0: [default0]:Params for bucket 66 (62914560 elements, 62914560 padded size):
+0: [default0]:	module.decoder.layers.8.mlp.linear_fc1.layer_norm_weight
+0: [default0]:	module.decoder.layers.7.mlp.linear_fc2.weight
+0: [default0]:Params for bucket 66 (73400320 elements, 73400320 padded size):
 0: [default0]:	module.decoder.layers.7.mlp.linear_fc1.weight
-0: [default0]:Params for bucket 67 (53489664 elements, 53489664 padded size):
+0: [default0]:Params for bucket 67 (66074624 elements, 66074624 padded size):
 0: [default0]:	module.decoder.layers.7.mlp.linear_fc1.layer_norm_weight
-0: [default0]:	module.decoder.layers.6.mlp.linear_fc2.weight
-0: [default0]:	module.decoder.layers.7.self_attention.linear_qkv.weight
 0: [default0]:	module.decoder.layers.7.self_attention.linear_proj.weight
+0: [default0]:	module.decoder.layers.6.mlp.linear_fc2.weight
 0: [default0]:	module.decoder.layers.7.self_attention.linear_qkv.layer_norm_weight
-0: [default0]:Params for bucket 68 (62914560 elements, 62914560 padded size):
+0: [default0]:	module.decoder.layers.7.self_attention.linear_qkv.weight
+0: [default0]:Params for bucket 68 (73400320 elements, 73400320 padded size):
 0: [default0]:	module.decoder.layers.6.mlp.linear_fc1.weight
-0: [default0]:Params for bucket 69 (53489664 elements, 53489664 padded size):
-0: [default0]:	module.decoder.layers.6.mlp.linear_fc1.layer_norm_weight
-0: [default0]:	module.decoder.layers.6.self_attention.linear_proj.weight
+0: [default0]:Params for bucket 69 (66074624 elements, 66074624 padded size):
 0: [default0]:	module.decoder.layers.6.self_attention.linear_qkv.layer_norm_weight
+0: [default0]:	module.decoder.layers.6.self_attention.linear_proj.weight
+0: [default0]:	module.decoder.layers.6.mlp.linear_fc1.layer_norm_weight
 0: [default0]:	module.decoder.layers.5.mlp.linear_fc2.weight
 0: [default0]:	module.decoder.layers.6.self_attention.linear_qkv.weight
-0: [default0]:Params for bucket 70 (62914560 elements, 62914560 padded size):
+0: [default0]:Params for bucket 70 (73400320 elements, 73400320 padded size):
 0: [default0]:	module.decoder.layers.5.mlp.linear_fc1.weight
-0: [default0]:Params for bucket 71 (53489664 elements, 53489664 padded size):
+0: [default0]:Params for bucket 71 (66074624 elements, 66074624 padded size):
 0: [default0]:	module.decoder.layers.5.mlp.linear_fc1.layer_norm_weight
-0: [default0]:	module.decoder.layers.5.self_attention.linear_qkv.layer_norm_weight
 0: [default0]:	module.decoder.layers.5.self_attention.linear_proj.weight
-0: [default0]:	module.decoder.layers.4.mlp.linear_fc2.weight
 0: [default0]:	module.decoder.layers.5.self_attention.linear_qkv.weight
-0: [default0]:Params for bucket 72 (62914560 elements, 62914560 padded size):
+0: [default0]:	module.decoder.layers.5.self_attention.linear_qkv.layer_norm_weight
+0: [default0]:	module.decoder.layers.4.mlp.linear_fc2.weight
+0: [default0]:Params for bucket 72 (73400320 elements, 73400320 padded size):
 0: [default0]:	module.decoder.layers.4.mlp.linear_fc1.weight
-0: [default0]:Params for bucket 73 (53489664 elements, 53489664 padded size):
-0: [default0]:	module.decoder.layers.4.mlp.linear_fc1.layer_norm_weight
-0: [default0]:	module.decoder.layers.4.self_attention.linear_qkv.layer_norm_weight
+0: [default0]:Params for bucket 73 (66074624 elements, 66074624 padded size):
 0: [default0]:	module.decoder.layers.4.self_attention.linear_proj.weight
+0: [default0]:	module.decoder.layers.4.mlp.linear_fc1.layer_norm_weight
 0: [default0]:	module.decoder.layers.4.self_attention.linear_qkv.weight
-0: [default0]:	module.decoder.layers.3.mlp.linear_fc
-0: 2.weight
-0: [default0]:Params for bucket 74 (62914560 elements, 62914560 padded size):
+0: [default0]:	module.decoder.layers.3.mlp.linear_fc2.weight
+0: [default0]:	module.decoder.layers.4.self_attention.linear_qkv.layer_norm_weight
+0: [default0]:Params for bucket 74 (73400320 elements, 73400320 padded size):
 0: [default0]:	module.decoder.layers.3.mlp.linear_fc1.weight
-0: [default0]:Params for bucket 75 (53489664 elements, 53489664 padded size):
-0: [default0]:	module.decoder.layers.3.mlp.linear_fc1.layer_norm_weight
-0: [default0]:	module.decoder.layers.3.self_attention.linear_qkv.layer_norm_weight
+0: [default0]:Params for bucket 75 (66074624 elements, 66074624 padded size):
 0: [default0]:	module.decoder.layers.2.mlp.linear_fc2.weight
 0: [default0]:	module.decoder.layers.3.self_attention.linear_qkv.weight
 0: [default0]:	module.decoder.layers.3.self_attention.linear_proj.weight
-0: [default0]:Params for bucket 76 (62914560 elements, 62914560 padded size):
+0: [default0]:	module.decoder.layers.3.mlp.linear_fc1.layer_norm_weight
+0: [default0]:	module.decoder.layers.3.self_attention.linear_qkv.layer_norm_weight
+0: [default0]:Params for bucket 76 (73400320 elements, 73400320 padded size):
 0: [default0]:	module.decoder.layers.2.mlp.linear_fc1.weight
-0: [default0]:Params for bucket 77 (53489664 elements, 53489664 padded size):
-0: [default0]:	module.decoder.layers.2.self_attention.linear_qkv.layer_norm_weight
-0: [default0]:	module.decoder.layers.2.self_attention.linear_proj.weight
+0: [default0]:Params for bucket 77 (66074624 elements, 66074624 padded size):
 0: [default0]:	module.decoder.layers.2.mlp.linear_fc1.layer_norm_weight
-0: [default0]:	module.decoder.layers.1.mlp.linear_fc2.weight
 0: [default0]:	module.decoder.layers.2.self_attention.linear_qkv.weight
-0: [default0]:Params for bucket 78 (62914560 elements, 62914560 padded size):
-0: [default0]:	module.decoder.layers.1.mlp.linear_fc1.weight
-0: [default0]:Params for bucket 79 (53489664 elements, 53489664 padded size):
+0: [default0]:	module.decoder.layers.1.mlp.linear_fc2.weight
+0: [default0]:	module.decoder.layers.2.self_attention.linear_proj.weight
+0: [default0]:	module.decoder.layers.2.self_attention.linear_qkv.layer_norm_weight
+0: [default0]:Params for bucket 78 (73400320 elements, 73400320 padded size):
+0: [default0]:	module.decoder.layers.1.mlp.linear_fc
+0: 1.weight
+0: [default0]:Params for bucket 79 (66074624 elements, 66074624 padded size):
 0: [default0]:	module.decoder.layers.1.mlp.linear_fc1.layer_norm_weight
-0: [default0]:	module.decoder.layers.1.self_attention.linear_qkv.weight
 0: [default0]:	module.decoder.layers.0.mlp.linear_fc2.weight
-0: [default0]:	module.decoder.layers.1.self_attention.linear_qkv.laye
-0: r_norm_weight
+0: [default0]:	module.decoder.layers.1.self_attention.linear_qkv.layer_norm_weight
+0: [default0]:	module.decoder.layers.1.self_attention.linear_qkv.weight
 0: [default0]:	module.decoder.layers.1.self_attention.linear_proj.weight
-0: [default0]:Params for bucket 80 (62914560 elements, 62914560 padded size):
+0: [default0]:Params for bucket 80 (73400320 elements, 73400320 padded size):
 0: [default0]:	module.decoder.layers.0.mlp.linear_fc1.weight
-0: [default0]:Params for bucket 81 (99889152 elements, 99889152 padded size):
-0: [default0]:	module.embedding.word_embeddings.weight
+0: [default0]:Params for bucket 81 (120207360 elements, 120207360 padded size):
 0: [default0]:	module.decoder.layers.0.mlp.linear_fc1.layer_norm_weight
 0: [default0]:	module.decoder.layers.0.self_attention.linear_qkv.layer_norm_weight
 0: [default0]:	module.decoder.layers.0.self_attention.linear_proj.weight
+0: [default0]:	module.embedding.word_embeddings.weight
 0: [default0]:	module.decoder.layers.0.self_attention.linear_qkv.weight
 0: [default0]:INFO:megatron.core.optimizer:Setting up optimizer with config AdamOptimizerConfig(lr=0.0003, min_lr=0.0, decoupled_lr=None, decoupled_min_lr=None, weight_decay=0.1, apply_wd_to_qk_layernorm=False, fp8_recipe='delayed', fp16=False, bf16=True, reuse_grad_buf_for_mxfp8_param_ag=False, params_dtype=torch.bfloat16, use_precision_aware_optimizer=True, store_param_remainders=True, main_grads_dtype=torch.bfloat16, main_params_dtype=torch.float32, exp_avg_dtype=torch.float32, exp_avg_sq_dtype=torch.float32, optimizer='adam', loss_scale=None, initial_loss_scale=4294967296, min_loss_scale=1.0, loss_scale_window=1000, hysteresis=2, adam_beta1=0.9, adam_beta2=0.95, adam_eps=1e-08, decoupled_weight_decay=True, sgd_momentum=0.9, muon_momentum=0.9, muon_split_qkv=True, muon_use_nesterov=False, muon_scale_mode='spectral', muon_fp32_matmul_prec='medium', muon_num_ns_steps=5, muon_tp_mode='blockwise', muon_extra_scale_factor=1.0, use_distributed_optimizer=True, overlap_param_gather=True, overlap_param_gather_with_opt
-0: imizer_step=False, optimizer_cpu_offload=False, optimizer_offload_fraction=1.0, use_torch_optimizer_for_cpu_offload=False, overlap_cpu_optimizer_d2h_h2d=False, pin_cpu_grads=True, pin_cpu_params=True, clip_grad=1.0, log_num_zeros_in_grad=False, barrier_with_L1_time=True, timers=<megatron.core.timers.Timers object at 0x400553a25fa0>, config_logger_dir='')
+0: imizer_step=False, optimizer_cpu_offload=False, optimizer_offload_fraction=1.0, use_torch_optimizer_for_cpu_offload=False, overlap_cpu_optimizer_d2h_h2d=False, pin_cpu_grads=True, pin_cpu_params=True, clip_grad=1.0, log_num_zeros_in_grad=False, barrier_with_L1_time=True, timers=<megatron.core.timers.Timers object at 0x400766e59d30>, config_logger_dir='')
 0: [default0]:INFO:megatron.core.optimizer_param_scheduler:> learning rate decay style: constant
-0: [default0]:[after model, optimizer, and learning rate scheduler are built] datetime: 2026-05-01 10:07:31.026896 
+0: [default0]:[after model, optimizer, and learning rate scheduler are built] datetime: 2026-05-12 19:33:04.976053 
 0: [default0]:> building train, validation, and test datasets ...
 0: [default0]: > datasets target sizes (minimum size):
-0: [default0]:    train:      12800
+0: [default0]:    train:      6400
 0: [default0]:    validation: 0
 0: [default0]:    test:       0
 0: [default0]:INFO:megatron.core.datasets.blended_megatron_dataset_config:Let split_matrix = [(0, 0.99), (0.99, 1.0), None]
 0: [default0]:> building train, validation, and test datasets for GPT ...
-0: [default0]:INFO:megatron.core.datasets.blended_megatron_dataset_builder:Building GPTDataset splits with sizes=(12800, 0, 0) and config=GPTDatasetConfig(random_seed=42, sequence_length=4096, blend=(['/capstor/store/cscs/swissai/infra01/datasets/nvidia/Nemotron-ClimbMix/climbmix_small_megatron/climbmix_small'], None), blend_per_split=None, multiple_validation_sets=False, full_validation=False, split='99,1,0', split_matrix=[(0, 0.99), (0.99, 1.0), None], num_dataset_builder_threads=1, path_to_cache='/iopsstor/scratch/cscs/course_00197/gipfelsturm/cache', mmap_bin_files=True, mock=False, tokenizer=<megatron.core.tokenizers.text.models.default_tokenizer.DefaultTokenizerText object at 0x400686e38c20>, mid_level_dataset_surplus=0.005, allow_ambiguous_pad_tokens=False, fast_cache_load=False, defer_npy_index_mmap=False, reset_pos
-0: ition_ids=False, reset_attention_mask=False, eod_mask_loss=False, create_attention_mask=True, drop_last_partial_validation_sequence=True, add_extra_token_to_sequence=True, object_storage_cache_path=None, data_parallel_size=1, sequence_parallel_size=0, hybrid_context_parallel=False, sequences_per_dataset=None, token_dtype_code=8, context_parallel_size=1)
+0: [default0]:INFO:megatron.core.datasets.blended_megatron_dataset_builder:Building GPTDataset splits with sizes=(6400, 0, 0) and config=GPTDatasetConfig(random_seed=42, sequence_length=4096, blend=(['/capstor/store/cscs/swissai/infra01/datasets/nvidia/Nemotron-ClimbMix/climbmix_small_megatron/climbmix_small'], None), blend_per_split=None, multiple_validation_sets=False, full_validation=False, split='99,1,0', split_matrix=[(0, 0.99), (0.99, 1.0), None], num_dataset_builder_threads=1, path_to_cache='/iopsstor/scratch/cscs/course_00197/gipfelsturm/cache', mmap_bin_files=True, mock=False, tokenizer=<megatron.core.tokenizers.text.models.default_tokenizer.DefaultTokenizerText object at 0x40084fc6b110>, mid_level_dataset_surplus=0.005, allow_ambiguous_pad_tokens=False, fast_cache_load=False, defer_npy_index_mmap=False, reset_posi
+0: tion_ids=False, reset_attention_mask=False, eod_mask_loss=False, create_attention_mask=True, drop_last_partial_validation_sequence=True, add_extra_token_to_sequence=True, object_storage_cache_path=None, data_parallel_size=1, sequence_parallel_size=0, hybrid_context_parallel=False, sequences_per_dataset=None, token_dtype_code=8, context_parallel_size=1)
 0: [default0]:INFO:megatron.core.datasets.indexed_dataset:Load the _IndexReader from /capstor/store/cscs/swissai/infra01/datasets/nvidia/Nemotron-ClimbMix/climbmix_small_megatron/climbmix_small.idx
 0: [default0]:INFO:megatron.core.datasets.indexed_dataset:	Extract the sequence lengths
 0: [default0]:INFO:megatron.core.datasets.indexed_dataset:	Extract the sequence pointers
@@ -1131,136 +1126,286 @@ CMD: torchrun --nproc-per-node 4 --nnodes 1 --rdzv_endpoint nid007645:25678 --rd
 0: [default0]:INFO:megatron.core.datasets.indexed_dataset:> total number of sequences: 48965906
 0: [default0]:INFO:megatron.core.datasets.indexed_dataset:> total number of documents: 48965906
 0: [default0]:INFO:megatron.core.datasets.gpt_dataset:Load the GPTDataset train indices
-0: [default0]:INFO:megatron.core.datasets.gpt_dataset:	Load the document index from a2af6830334196c06cbba09fcd9e8735-GPTDataset-train-document_index.npy
-0: [default0]:INFO:megatron.core.datasets.gpt_dataset:	Load the sample index from a2af6830334196c06cbba09fcd9e8735-GPTDataset-train-sample_index.npy
-0: [default0]:INFO:megatron.core.datasets.gpt_dataset:	Load the shuffle index from a2af6830334196c06cbba09fcd9e8735-GPTDataset-train-shuffle_index.npy
-0: [default0]:INFO:megatron.core.datasets.gpt_dataset:> total number of samples: 8612827
+0: [default0]:INFO:megatron.core.datasets.gpt_dataset:	Load the document index from d8ff8b14eb51313ec6f06f5774be5d4d-GPTDataset-train-document_index.npy
+0: [default0]:INFO:megatron.core.datasets.gpt_dataset:	Load the sample index from d8ff8b14eb51313ec6f06f5774be5d4d-GPTDataset-train-sample_index.npy
+0: [default0]:INFO:megatron.core.datasets.gpt_dataset:	Load the shuffle index from d8ff8b14eb51313ec6f06f5774be5d4d-GPTDataset-train-shuffle_index.npy
+0: [default0]:INFO:megatron.core.datasets.gpt_dataset:> 
+0: total number of samples: 8612827
 0: [default0]:INFO:megatron.core.datasets.gpt_dataset:Load the GPTDataset valid indices
 0: [default0]:INFO:megatron.core.datasets.gpt_dataset:	Load the document index from 6e4c877964ab64c436555826c5e92f8b-GPTDataset-valid-document_index.npy
 0: [default0]:INFO:megatron.core.datasets.gpt_dataset:	Load the sample index from 6e4c877964ab64c436555826c5e92f8b-GPTDataset-valid-sample_index.npy
-0: [default0]:INFO:megatron.cor
-0: e.datasets.gpt_dataset:	Load the shuffle index from 6e4c877964ab64c436555826c5e92f8b-GPTDataset-valid-shuffle_index.npy
+0: [default0]:INFO:megatron.core.datasets.gpt_dataset:	Load the shuffle index from 6e4c877964ab64c436555826c5e92f8b-GPTDataset-valid-shuffle_index.npy
 0: [default0]:INFO:megatron.core.datasets.gpt_dataset:> total number of samples: 61644
 0: [default0]:> finished creating GPT datasets ...
 0: [default3]:INFO:megatron.core.timers:(min, max) time across ranks (ms):
-0: [default3]:    model-and-optimizer-setup ......................: (2067.98, 2068.26)
-0: [default3]:    train/valid/test-data-iterators-setup ..........: (939.83, 1019.65)
-0: [default0]:[after dataloaders are built] datetime: 2026-05-01 10:07:32.048301 
+0: [default3]:    model-and-optimizer-setup ......................: (838.15, 838.50)
+0: [default3]:    train/valid/test-data-iterators-setup ..........: (939.83, 1032.16)
+0: [default0]:[after dataloaders are built] datetime: 2026-05-12 19:33:06.010021 
 0: [default0]:done with setup ...
 0: [default0]:training ...
 0: [default0]:Overwriting rerun_state_machine.current_iteration from -1 to 0...
-0: [default0]:[before the start of training step] datetime: 2026-05-01 10:07:32.121222 
+0: [default0]:[before the start of training step] datetime: 2026-05-12 19:33:06.085088 
 0: [default0]:/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/core/pipeline_parallel/schedules.py:189: UserWarning: The AccumulateGrad node's stream does not match the stream of the node that produced the incoming gradient. This may incur unnecessary synchronization and break CUDA graph capture if the AccumulateGrad node's stream is the default stream. This mismatch is caused by an AccumulateGrad node created prior to the current iteration being kept alive. This can happen if the autograd graph is still being kept alive by tensors such as the loss, or if you are using DDP, which will stash a reference to the node. To resolve the mismatch, delete all references to the autograd graph or ensure that DDP initialization is performed under the same stream as subsequent forwards. If the mismatch is intentional, you can use torch.autograd.graph.set_warn_on_accumulate_grad_stream_mismatch(False) to suppress this warning. (Triggered internally at /opt/pytorch/pytorch/torch/csrc/autograd/inp
 0: ut_buffer.cpp:240.)
 0: [default0]:  Variable._execution_engine.run_backward(
+0: [default2]:[Rank 2] (after 1 iterations) memory (MB) | allocated: 77586.79 | max allocated: 77586.85 | reserved: 78200.00 | max reserved: 78200.00
 0: [default0]:/usr/local/lib/python3.12/dist-packages/torch/distributed/c10d_logger.py:83: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+0: [default1]:[Rank 1] (after 1 iterations) memory (MB) | allocated: 77586.79 | max allocated: 77586.85 | reserved: 78200.00 | max reserved: 78200.00
 0: [default0]:  return func(*args, **kwargs)
-0: [default0]:
-0: [default0]:============================================
-0: [default0]:      Activation Offload Summary (MB)       
-0: [default0]:============================================
-0: [default0]:Rank       attn_proj   core_attn       Total
-0: [default0]:--------------------------------------------
-0: [default0]:Rank 0        468.00     1092.00     1560.00
-0: [default0]:Rank 1        468.00     1092.00     1560.00
-0: [default0]:Rank 2        468.00     1092.00     1560.00
-0: [default0]:Rank 3        468.00     1092.00     1560.00
-0: [default0]:--------------------------------------------
-0: [default0]:Total        1872.00     4368.00     6240.00
-0: [default0]:============================================
-0: [default0]:
-0: [default3]: [2026-05-01 10:09:23.107213] iteration        1/      50 | consumed samples:          256 | elapsed time per iteration (ms): 110985.8 | throughput per GPU (TFLOP/s/GPU): 282.6 | tokens/sec/GPU: 2362 | MFU: 28.57% | learning rate: 3.000000E-05 | global batch size:   256 | lm loss: 1.205724E+01 | loss scale: 1.0 | grad norm: 12.032 | number of skipped iterations:   0 | number of nan iterations:   0 |
-0: [default3]:[Rank 3] (after 1 iterations) memory (MB) | allocated: 64718.25 | max allocated: 64718.38 | reserved: 65412.00 | max reserved: 65412.00
-0: [default1]:[Rank 1] (after 1 iterations) memory (MB) | allocated: 64718.25 | max allocated: 64718.38 | reserved: 65412.00 | max reserved: 65412.00
-0: [default2]:[Rank 2] (after 1 iterations) memory (MB) | allocated: 64718.25 | max allocated: 64718.38 | reserved: 65412.00 | max reserved: 65412.00
-0: [default0]:Number of parameters in transformer block in billions:  18.62
-0: [default0]:Number of parameters in embedding layers in billions: 0.62
-0: [default0]:Total number of parameters in billions: 19.25
-0: [default0]:Number of parameters in most loaded shard in billions: 4.8115
+0: [default0]:Number of parameters in transformer block in billions:  22.31
+0: [default0]:Number of parameters in embedding layers in billions: 0.73
+0: [default0]:Total number of parameters in billions: 23.04
+0: [default0]:Number of parameters in most loaded shard in billions: 5.7602
+0: [default3]: [2026-05-12 19:35:08.097066] iteration        1/      25 | consumed samples:          256 | elapsed time per iteration (ms): 122012.0 | throughput per GPU (TFLOP/s/GPU): 307.5 | tokens/sec/GPU: 2149 | MFU: 31.09% | learning rate: 3.000000E-05 | global batch size:   256 | lm loss: 1.228103E+01 | loss scale: 1.0 | grad norm: 12.970 | number of skipped iterations:   0 | number of nan iterations:   0 |
+0: [default3]:[Rank 3] (after 1 iterations) memory (MB) | allocated: 77586.79 | max allocated: 77586.85 | reserved: 78200.00 | max reserved: 78200.00
 0: [default0]:compute_activation_memory_without_sp
-0: [default0]:Activation memory footprint per transformer layer (precise, without SP): 384.0 MB
-0: [default0]:Theoretical memory footprints: weight and optimizer=82595.14 MB, activation=16307.58 MB, total=98902.72 MB
+0: [default0]:Activation memory footprint per transformer layer (precise, without SP): 896.0 MB
+0: [default0]:Theoretical memory footprints: weight and optimizer=98880.99 MB, activation=38016.37 MB, total=136897.36 MB
 0: [default0]:
-0: [default0]:[Rank 0] (after 1 iterations) memory (MB) | allocated: 64718.25 | max allocated: 64718.38 | reserved: 65412.00 | max reserved: 65412.00
-0: [default3]: [2026-05-01 10:11:08.538443] iteration        2/      50 | consumed samples:          512 | elapsed time per iteration (ms): 108208.2 | throughput per GPU (TFLOP/s/GPU): 289.8 | tokens/sec/GPU: 2423 | MFU: 29.31% | learning rate: 6.000000E-05 | global batch size:   256 | lm loss: 1.205674E+01 | loss scale: 1.0 | grad norm: 10.678 | number of skipped iterations:   0 | number of nan iterations:   0 |
-0: [default3]:[Rank 3] (after 2 iterations) memory (MB) | allocated: 64718.25 | max allocated: 67246.65 | reserved: 69252.00 | max reserved: 69252.00
-0: [default2]:[Rank 2] (after 2 iterations) memory (MB) | allocated: 64718.25 | max allocated: 67246.65 | reserved: 69252.00 | max reserved: 69252.00
-0: [default1]:[Rank 1] (after 2 iterations) memory (MB) | allocated: 64718.25 | max allocated: 67246.65 | reserved: 69252.00 | max reserved: 69252.00
-0: [default0]:Number of parameters in transformer block in billions:  18.62
-0: [default0]:Number of parameters in embedding layers in billions: 0.62
-0: [default0]:Total number of parameters in billions: 19.25
-0: [default0]:Number of parameters in most loaded shard in billions: 4.8115
+0: [default0]:[Rank 0] (after 1 iterations) memory (MB) | allocated: 77586.79 | max allocated: 77586.85 | reserved: 78200.00 | max reserved: 78200.00
+0: [default2]:[Rank 2] (after 2 iterations) memory (MB) | allocated: 77586.79 | max allocated: 83313.46 | reserved: 85996.00 | max reserved: 85996.00
+0: [default3]: [2026-05-12 19:37:05.096184] iteration        2/      25 | consumed samples:          512 | elapsed time per iteration (ms): 119505.1 | throughput per GPU (TFLOP/s/GPU): 313.9 | tokens/sec/GPU: 2194 | MFU: 31.74% | learning rate: 6.000000E-05 | global batch size:   256 | lm loss: 1.228011E+01 | loss scale: 1.0 | grad norm: 12.529 | number of skipped iterations:   0 | number of nan iterations:   0 |
+0: [default3]:[Rank 3] (after 2 iterations) memory (MB) | allocated: 77586.79 | max allocated: 83313.46 | reserved: 85996.00 | max reserved: 85996.00
+0: [default0]:Number of parameters in transformer block in billions:  22.31
+0: [default0]:Number of parameters in embedding layers in billions: 0.73
+0: [default0]:Total number of parameters in billions: 23.04
+0: [default0]:Number of parameters in most loaded shard in billions: 5.7602
 0: [default0]:compute_activation_memory_without_sp
-0: [default0]:Activation memory footprint per transformer layer (precise, without SP): 384.0 MB
-0: [default0]:Theoretical memory footprints: weight and optimizer=82595.14 MB, activation=16307.58 MB, total=98902.72 MB
+0: [default0]:Activation memory footprint per transformer layer (precise, without SP): 896.0 MB
+0: [default1]:[Rank 1] (after 2 iterations) memory (MB) | allocated: 77586.79 | max allocated: 83313.46 | reserved: 85996.00 | max reserved: 85996.00
+0: [default0]:Theoretical memory footprints: weight and optimizer=98880.99 MB, activation=38016.37 MB, total=136897.36 MB
 0: [default0]:
-0: [default0]:[Rank 0] (after 2 iterations) memory (MB) | allocated: 64718.25 | max allocated: 67246.65 | reserved: 69252.00 | max reserved: 69252.00
-0: [default3]: [2026-05-01 10:12:53.860841] iteration        3/      50 | consumed samples:          768 | elapsed time per iteration (ms): 105322.1 | throughput per GPU (TFLOP/s/GPU): 297.8 | tokens/sec/GPU: 2489 | MFU: 30.11% | learning rate: 9.000000E-05 | global batch size:   256 | lm loss: 2.129013E+01 | loss scale: 1.0 | grad norm: 405.015 | number of skipped iterations:   0 | number of nan iterations:   0 |
-0: [default3]: [2026-05-01 10:14:39.182514] iteration        4/      50 | consumed samples:         1024 | elapsed time per iteration (ms): 105321.4 | throughput per GPU (TFLOP/s/GPU): 297.8 | tokens/sec/GPU: 2489 | MFU: 30.11% | learning rate: 1.200000E-04 | global batch size:   256 | lm loss: 1.362495E+01 | loss scale: 1.0 | grad norm: 58.614 | number of skipped iterations:   0 | number of nan iterations:   0 |
-0: [default3]: [2026-05-01 10:16:24.319482] iteration        5/      50 | consumed samples:         1280 | elapsed time per iteration (ms): 105136.4 | throughput per GPU (TFLOP/s/GPU): 298.3 | tokens/sec/GPU: 2493 | MFU: 30.16% | learning rate: 1.500000E-04 | global batch size:   256 | lm loss: 2.549074E+01 | loss scale: 1.0 | grad norm: 565.469 | number of skipped iterations:   0 | number of nan iterations:   0 |
-0: [default3]: [2026-05-01 10:18:13.877594] iteration        6/      50 | consumed samples:         1536 | elapsed time per iteration (ms): 109557.9 | throughput per GPU (TFLOP/s/GPU): 286.3 | tokens/sec/GPU: 2393 | MFU: 28.95% | learning rate: 1.800000E-04 | global batch size:   256 | lm loss: 3.079348E+01 | loss scale: 1.0 | grad norm: 419.562 | number of skipped iterations:   0 | number of nan iterations:   0 |
-0: [default3]: [2026-05-01 10:19:57.298931] iteration        7/      50 | consumed samples:         1792 | elapsed time per iteration (ms): 103421.1 | throughput per GPU (TFLOP/s/GPU): 303.3 | tokens/sec/GPU: 2535 | MFU: 30.66% | learning rate: 2.100000E-04 | global batch size:   256 | lm loss: 3.354415E+01 | loss scale: 1.0 | grad norm: 91.471 | number of skipped iterations:   0 | number of nan iterations:   0 |
-0: [default3]: [2026-05-01 10:21:39.802681] iteration        8/      50 | consumed samples:         2048 | elapsed time per iteration (ms): 102503.5 | throughput per GPU (TFLOP/s/GPU): 306.0 | tokens/sec/GPU: 2557 | MFU: 30.94% | learning rate: 2.400000E-04 | global batch size:   256 | lm loss: 1.825030E+01 | loss scale: 1.0 | grad norm: 94.645 | number of skipped iterations:   0 | number of nan iterations:   0 |
-0: [default3]: [2026-05-01 10:23:22.439549] iteration        9/      50 | consumed samples:         2304 | elapsed time per iteration (ms): 102636.5 | throughput per GPU (TFLOP/s/GPU): 305.6 | tokens/sec/GPU: 2554 | MFU: 30.90% | learning rate: 2.700000E-04 | global batch size:   256 | lm loss: 1.558310E+01 | loss scale: 1.0 | grad norm: 6.924 | number of skipped iterations:   0 | number of nan iterations:   0 |
-0: [default3]: [2026-05-01 10:25:04.470181] iteration       10/      50 | consumed samples:         2560 | elapsed time per iteration (ms): 102030.4 | throughput per GPU (TFLOP/s/GPU): 307.4 | tokens/sec/GPU: 2569 | MFU: 31.08% | learning rate: 3.000000E-04 | global batch size:   256 | lm loss: 2.842147E+01 | loss scale: 1.0 | grad norm: 82.329 | number of skipped iterations:   0 | number of nan iterations:   0 |
-0: [default3]: [2026-05-01 10:26:46.256567] iteration       11/      50 | consumed samples:         2816 | elapsed time per iteration (ms): 101786.1 | throughput per GPU (TFLOP/s/GPU): 308.1 | tokens/sec/GPU: 2575 | MFU: 31.16% | learning rate: 3.000000E-04 | global batch size:   256 | lm loss: 1.644057E+01 | loss scale: 1.0 | grad norm: 55.856 | number of skipped iterations:   0 | number of nan iterations:   0 |
-0: [default3]: [2026-05-01 10:28:27.954893] iteration       12/      50 | consumed samples:         3072 | elapsed time per iteration (ms): 101698.0 | throughput per GPU (TFLOP/s/GPU): 308.4 | tokens/sec/GPU: 2578 | MFU: 31.18% | learning rate: 3.000000E-04 | global batch size:   256 | lm loss: 2.091295E+01 | loss scale: 1.0 | grad norm: 78.776 | number of skipped iterations:   0 | number of nan iterations:   0 |
-0: [default3]: [2026-05-01 10:30:09.594675] iteration       13/      50 | consumed samples:         3328 | elapsed time per iteration (ms): 101639.4 | throughput per GPU (TFLOP/s/GPU): 308.6 | tokens/sec/GPU: 2579 | MFU: 31.20% | learning rate: 3.000000E-04 | global batch size:   256 | lm loss: 1.510388E+01 | loss scale: 1.0 | grad norm: 48.074 | number of skipped iterations:   0 | number of nan iterations:   0 |
-0: [default3]: [2026-05-01 10:31:51.237000] iteration       14/      50 | consumed samples:         3584 | elapsed time per iteration (ms): 101642.1 | throughput per GPU (TFLOP/s/GPU): 308.6 | tokens/sec/GPU: 2579 | MFU: 31.20% | learning rate: 3.000000E-04 | global batch size:   256 | lm loss: 1.311120E+01 | loss scale: 1.0 | grad norm: 22.098 | number of skipped iterations:   0 | number of nan iterations:   0 |
-0: [default3]: [2026-05-01 10:33:32.821702] iteration       15/      50 | consumed samples:         3840 | elapsed time per iteration (ms): 101584.4 | throughput per GPU (TFLOP/s/GPU): 308.7 | tokens/sec/GPU: 2581 | MFU: 31.22% | learning rate: 3.000000E-04 | global batch size:   256 | lm loss: 1.195362E+01 | loss scale: 1.0 | grad norm: 8.499 | number of skipped iterations:   0 | number of nan iterations:   0 |
-0: [default3]: [2026-05-01 10:35:14.084200] iteration       16/      50 | consumed samples:         4096 | elapsed time per iteration (ms): 101262.1 | throughput per GPU (TFLOP/s/GPU): 309.7 | tokens/sec/GPU: 2589 | MFU: 31.32% | learning rate: 3.000000E-04 | global batch size:   256 | lm loss: 1.222235E+01 | loss scale: 1.0 | grad norm: 42.507 | number of skipped iterations:   0 | number of nan iterations:   0 |
-0: slurmstepd: error: *** STEP 1996443.0 ON nid007645 CANCELLED AT 2026-05-01T10:36:44 DUE TO TIME LIMIT ***
-slurmstepd: error: *** JOB 1996443 ON nid007645 CANCELLED AT 2026-05-01T10:36:44 DUE TO TIME LIMIT ***
+0: [default0]:[Rank 0] (after 2 iterations) memory (MB) | allocated: 77586.79 | max allocated: 83313.46 | reserved: 85996.00 | max reserved: 85996.00
+0: [default3]: [2026-05-12 19:39:01.986137] iteration        3/      25 | consumed samples:          768 | elapsed time per iteration (ms): 116889.8 | throughput per GPU (TFLOP/s/GPU): 320.9 | tokens/sec/GPU: 2243 | MFU: 32.45% | learning rate: 9.000000E-05 | global batch size:   256 | lm loss: 1.812922E+01 | loss scale: 1.0 | grad norm: 339.492 | number of skipped iterations:   0 | number of nan iterations:   0 |
+0: [default3]: [2026-05-12 19:40:58.994686] iteration        4/      25 | consumed samples:         1024 | elapsed time per iteration (ms): 117008.4 | throughput per GPU (TFLOP/s/GPU): 320.6 | tokens/sec/GPU: 2240 | MFU: 32.42% | learning rate: 1.200000E-04 | global batch size:   256 | lm loss: 1.334108E+01 | loss scale: 1.0 | grad norm: 56.367 | number of skipped iterations:   0 | number of nan iterations:   0 |
+0: [default3]: [2026-05-12 19:42:56.034996] iteration        5/      25 | consumed samples:         1280 | elapsed time per iteration (ms): 117040.0 | throughput per GPU (TFLOP/s/GPU): 320.5 | tokens/sec/GPU: 2240 | MFU: 32.41% | learning rate: 1.500000E-04 | global batch size:   256 | lm loss: 1.286887E+01 | loss scale: 1.0 | grad norm: 100.261 | number of skipped iterations:   0 | number of nan iterations:   0 |
+0: [default3]: [2026-05-12 19:44:52.084779] iteration        6/      25 | consumed samples:         1536 | elapsed time per iteration (ms): 116049.6 | throughput per GPU (TFLOP/s/GPU): 323.3 | tokens/sec/GPU: 2259 | MFU: 32.69% | learning rate: 1.800000E-04 | global batch size:   256 | lm loss: 1.595162E+01 | loss scale: 1.0 | grad norm: 53.936 | number of skipped iterations:   0 | number of nan iterations:   0 |
+0: [default3]: [2026-05-12 19:46:48.092296] iteration        7/      25 | consumed samples:         1792 | elapsed time per iteration (ms): 116007.2 | throughput per GPU (TFLOP/s/GPU): 323.4 | tokens/sec/GPU: 2260 | MFU: 32.70% | learning rate: 2.100000E-04 | global batch size:   256 | lm loss: 3.784322E+01 | loss scale: 1.0 | grad norm: 855.356 | number of skipped iterations:   0 | number of nan iterations:   0 |
+0: [default3]: [2026-05-12 19:48:42.638829] iteration        8/      25 | consumed samples:         2048 | elapsed time per iteration (ms): 114546.2 | throughput per GPU (TFLOP/s/GPU): 327.5 | tokens/sec/GPU: 2289 | MFU: 33.12% | learning rate: 2.400000E-04 | global batch size:   256 | lm loss: 2.767872E+01 | loss scale: 1.0 | grad norm: 125.999 | number of skipped iterations:   0 | number of nan iterations:   0 |
+0: [default3]: [2026-05-12 19:50:37.120645] iteration        9/      25 | consumed samples:         2304 | elapsed time per iteration (ms): 114481.8 | throughput per GPU (TFLOP/s/GPU): 327.7 | tokens/sec/GPU: 2290 | MFU: 33.13% | learning rate: 2.700000E-04 | global batch size:   256 | lm loss: 1.577305E+01 | loss scale: 1.0 | grad norm: 42.041 | number of skipped iterations:   0 | number of nan iterations:   0 |
+0: [default3]: [2026-05-12 19:52:31.233782] iteration       10/      25 | consumed samples:         2560 | elapsed time per iteration (ms): 114112.9 | throughput per GPU (TFLOP/s/GPU): 328.8 | tokens/sec/GPU: 2297 | MFU: 33.24% | learning rate: 3.000000E-04 | global batch size:   256 | lm loss: 2.295290E+01 | loss scale: 1.0 | grad norm: 97.540 | number of skipped iterations:   0 | number of nan iterations:   0 |
+0: [default3]: [2026-05-12 19:54:24.998173] iteration       11/      25 | consumed samples:         2816 | elapsed time per iteration (ms): 113764.2 | throughput per GPU (TFLOP/s/GPU): 329.8 | tokens/sec/GPU: 2304 | MFU: 33.34% | learning rate: 3.000000E-04 | global batch size:   256 | lm loss: 2.141853E+01 | loss scale: 1.0 | grad norm: 87.222 | number of skipped iterations:   0 | number of nan iterations:   0 |
+0: [default3]: [2026-05-12 19:56:19.781555] iteration       12/      25 | consumed samples:         3072 | elapsed time per iteration (ms): 114783.2 | throughput per GPU (TFLOP/s/GPU): 326.8 | tokens/sec/GPU: 2284 | MFU: 33.05% | learning rate: 3.000000E-04 | global batch size:   256 | lm loss: 1.665752E+01 | loss scale: 1.0 | grad norm: 10.791 | number of skipped iterations:   0 | number of nan iterations:   0 |
+0: [default3]: [2026-05-12 19:58:12.685390] iteration       13/      25 | consumed samples:         3328 | elapsed time per iteration (ms): 112903.5 | throughput per GPU (TFLOP/s/GPU): 332.3 | tokens/sec/GPU: 2322 | MFU: 33.60% | learning rate: 3.000000E-04 | global batch size:   256 | lm loss: 1.839582E+01 | loss scale: 1.0 | grad norm: 78.868 | number of skipped iterations:   0 | number of nan iterations:   0 |
+0: [default3]: [2026-05-12 20:00:05.686953] iteration       14/      25 | consumed samples:         3584 | elapsed time per iteration (ms): 113001.4 | throughput per GPU (TFLOP/s/GPU): 332.0 | tokens/sec/GPU: 2320 | MFU: 33.57% | learning rate: 3.000000E-04 | global batch size:   256 | lm loss: 1.768866E+01 | loss scale: 1.0 | grad norm: 54.082 | number of skipped iterations:   0 | number of nan iterations:   0 |
+0: [default3]: [2026-05-12 20:01:58.731483] iteration       15/      25 | consumed samples:         3840 | elapsed time per iteration (ms): 113044.5 | throughput per GPU (TFLOP/s/GPU): 331.9 | tokens/sec/GPU: 2319 | MFU: 33.56% | learning rate: 3.000000E-04 | global batch size:   256 | lm loss: 1.530309E+01 | loss scale: 1.0 | grad norm: 14.315 | number of skipped iterations:   0 | number of nan iterations:   0 |
 srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
-0: W0501 10:36:44.031000 103064 torch/distributed/elastic/agent/server/api.py:739] Received 15 death signal, shutting down workers
-0: W0501 10:36:44.031000 103064 torch/distributed/elastic/multiprocessing/api.py:1010] Sending process 103467 closing signal SIGTERM
-0: W0501 10:36:44.034000 103064 torch/distributed/elastic/multiprocessing/api.py:1010] Sending process 103468 closing signal SIGTERM
-0: W0501 10:36:44.037000 103064 torch/distributed/elastic/multiprocessing/api.py:1010] Sending process 103469 closing signal SIGTERM
-0: W0501 10:36:44.040000 103064 torch/distributed/elastic/multiprocessing/api.py:1010] Sending process 103470 closing signal SIGTERM
-0: [default2]:Stack (most recent call first):
-0: [default2]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/training/utils.py", line 687 in _broadcast_cu_seqlens
-0: [default2]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/training/utils.py", line 703 in get_batch_on_this_tp_rank
-0: [default2]:  File "/users/course_00197/scratch/lsaie-ss26-gipfelsturm/Megatron-LM/pretrain_gpt.py", line 75 in get_batch
-0: [default2]:  File "/users/course_00197/scratch/lsaie-ss26-gipfelsturm/Megatron-LM/pretrain_gpt.py", line 182 in forward_step
-0: [default2]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/core/pipeline_parallel/schedules.py", line 423 in forward_step
-0: [default2]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/core/pipeline_parallel/schedules.py", line 636 in forward_backward_no_pipelining
-0: [default2]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/training/training.py", line 1652 in train_step
-0: [default2]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/training/training.py", line 2808 in train
-0: [default2]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/training/training.py", line 1031 in pretrain
-0: [default2]:  File "/users/course_00197/scratch/lsaie-ss26-gipfelsturm/Megatron-LM/pretrain_gpt.py", line 342 in <module>
-0: W0501 10:36:44.049000 103064 torch/distributed/elastic/multiprocessing/api.py:1010] Sending process 103468 closing signal SIGTERM
-0: W0501 10:36:44.049000 103064 torch/distributed/elastic/multiprocessing/api.py:1010] Sending process 103469 closing signal SIGTERM
-0: W0501 10:36:44.050000 103064 torch/distributed/elastic/multiprocessing/api.py:1010] Sending process 103470 closing signal SIGTERM
-0: [default0]:Stack (most recent call first):
-0: [default0]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/training/utils.py", line 563 in _broadcast_cu_seqlens
-0: [default0]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/training/utils.py", line 585 in get_batch_on_this_tp_rank
-0: [default0]:  File "/users/course_00197/scratch/lsaie-ss26-gipfelsturm/Megatron-LM/pretrain_gpt.py", line 75 in get_batch
-0: [default0]:  File "/users/course_00197/scratch/lsaie-ss26-gipfelsturm/Megatron-LM/pretrain_gpt.py", line 182 in forward_step
-0: [default0]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/core/pipeline_parallel/schedules.py", line 423 in forward_step
-0: [default0]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/core/pipeline_parallel/schedules.py", line 636 in forward_backward_no_pipelining
-0: [default0]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/training/training.py", line 1652 in train_step
-0: [default0]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/training/training.py", line 2808 in train
-0: [default0]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/training/training.py", line 1031 in pretrain
-0: [default0]:  File "/users/course_00197/scratch/lsaie-ss26-gipfelsturm/Megatron-LM/pretrain_gpt.py", line 342 in <module>
+0: slurmstepd: error: *** STEP 2131371.0 ON nid006978 CANCELLED AT 2026-05-12T20:02:26 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 2131371 ON nid006978 CANCELLED AT 2026-05-12T20:02:26 DUE TO TIME LIMIT ***
+0: W0512 20:02:26.017000 269050 torch/distributed/elastic/agent/server/api.py:739] Received 15 death signal, shutting down workers
+0: W0512 20:02:26.017000 269050 torch/distributed/elastic/multiprocessing/api.py:1010] Sending process 269642 closing signal SIGTERM
+0: W0512 20:02:26.020000 269050 torch/distributed/elastic/multiprocessing/api.py:1010] Sending process 269643 closing signal SIGTERM
+0: W0512 20:02:26.024000 269050 torch/distributed/elastic/multiprocessing/api.py:1010] Sending process 269644 closing signal SIGTERM
 0: [default1]:Stack (most recent call first):
-0: [default1]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/training/utils.py", line 687 in _broadcast_cu_seqlens
-0: [default1]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/training/utils.py", line 703 in get_batch_on_this_tp_rank
-0: [default1]:  File "/users/course_00197/scratch/lsaie-ss26-gipfelsturm/Megatron-LM/pretrain_gpt.py", line 75 in get_batch
-0: [default1]:  File "/users/course_00197/scratch/lsaie-ss26-gipfelsturm/Megatron-LM/pretrain_gpt.py", line 182 in forward_step
+0: [default1]:  File "/usr/local/lib/python3.12/dist-packages/torch/distributed/c10d_logger.py", line 83 in wrapper
+0: [default1]:  File "/usr/local/lib/python3.12/dist-packages/transformer_engine/pytorch/distributed.py", line 1896 in allreduce
+0: [default1]:  File "/usr/local/lib/python3.12/dist-packages/transformer_engine/pytorch/module/linear.py", line 363 in forward
+0: [default1]:  File "/usr/local/lib/python3.12/dist-packages/transformer_engine/pytorch/module/linear.py", line 1468 in forward
+0: [default1]:  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/eval_frame.py", line 1154 in _fn
+0: [default1]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/core/extensions/transformer_engine.py", line 677 in forward
+0: [default0]:Stack (most recent call first):
+0: [default1]:  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1830 in inner
+0: [default0]:  File "/usr/local/lib/python3.12/dist-packages/transformer_engine/pytorch/cpp_extensions/gemm.py", line 205 in general_gemm
+0: [default0]:  File "/usr/local/lib/python3.12/dist-packages/transformer_engine/pytorch/module/layernorm_linear.py", line 361 in forward
+0: [default0]:  File "/usr/local/lib/python3.12/dist-packages/transformer_engine/pytorch/module/layernorm_linear.py", line 1589 in forward
+0: [default2]:Stack (most recent call first):
+0: [default2]:  File "/usr/local/lib/python3.12/dist-packages/transformer_engine/pytorch/cpp_extensions/gemm.py", line 205 in general_gemm
+0: [default2]:  File "/usr/local/lib/python3.12/dist-packages/transformer_engine/pytorch/module/layernorm_linear.py", line 361 in forward
+0: [default2]:  File "/usr/local/lib/python3.12/dist-packages/transformer_engine/pytorch/module/layernorm_linear.py", line 1589 in forward
+0: [default2]:  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/eval_frame.py", line 1154 in _fn
+0: [default2]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/core/extensions/transformer_engine.py", line 898 in forward
+0: [default2]:  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1830 in inner
+0: [default2]:  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1882 in _call_impl
+0: [default1]:  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1882 in _call_impl
+0: W0512 20:02:26.029000 269050 torch/distributed/elastic/multiprocessing/api.py:1010] Sending process 269645 closing signal SIGTERM
+0: [default0]:  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/eval_frame.py", line 1154 in _fn
+0: [default0]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/core/extensions/transformer_engine.py", line 898 in forward
+0: [default1]:  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1776 in _wrapped_call_impl
+0: [default1]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/core/transformer/attention.py", line 1208 in forward
+0: [default0]:  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1830 in inner
+0: [default0]:  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1882 in _call_impl
+0: [default0]:  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1776 in _wrapped_call_impl
+0: [default1]:  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1830 in inner
+0: [default1]:  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1882 in _call_impl
+0: [default0]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/core/transformer/mlp.py", line 159 in forward
+0: [default0]:  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1830 in inner
+0: [default2]:  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1776 in _wrapped_call_impl
+0: [default1]:  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1776 in _wrapped_call_impl
+0: [default2]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/core/transformer/mlp.py", line 159 in forward
+0: [default0]:  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1882 in _call_impl
+0: [default0]:  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1776 in _wrapped_call_impl
+0: [default1]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/core/transformer/transformer_layer.py", line 597 in _forward_attention
+0: [default1]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/core/transformer/transformer_layer.py", line 513 in forward
+0: [default1]:  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1830 in inner
+0: [default2]:  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1830 in inner
+0: [default1]:  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1882 in _call_impl
+0: [default1]:  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1776 in _wrapped_call_impl
+0: [default0]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/core/transformer/transformer_layer.py", line 756 in _forward_mlp
+0: [default0]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/core/transformer/transformer_layer.py", line 514 in forward
+0: [default2]:  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1882 in _call_impl
+0: [default2]:  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1776 in _wrapped_call_impl
+0: [default0]:  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1830 in inner
+0: [default0]:  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1882 in _call_impl
+0: [default0]:  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1776 in _wrapped_call_impl
+0: [default1]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/core/transformer/module.py", line 352 in __call__
+0: [default0]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/core/transformer/module.py", line 352 in __call__
+0: [default0]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/core/transformer/transformer_layer.py", line 1217 in __call__
+0: [default0]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/core/transformer/transformer_block.py", line 489 in custom_forward
+0: [default0]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/core/tensor_parallel/random.py", line 517 in forward
+0: [default0]:  File "/usr/local/lib/python3.12/dist-packages/torch/autograd/function.py", line 583 in apply
+0: [default0]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/core/tensor_parallel/random.py", line 576 in checkpoint
+0: [default1]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/core/transformer/transformer_layer.py", line 1217 in __call__
+0: [default1]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/core/transformer/transformer_block.py", line 489 in custom_forward
+0: [default2]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/core/transformer/transformer_layer.py", line 756 in _forward_mlp
+0: [default2]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/core/transformer/transformer_layer.py", line 514 in forward
+0: [default2]:  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1830 in inner
+0: [default1]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/core/tensor_parallel/random.py", line 517 in forward
+0: [default1]:  File "/usr/local/lib/python3.12/dist-packages/torch/autograd/function.py", line 583 in apply
+0: [default1]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/core/tensor_parallel/random.py", line 576 in checkpoint
+0: [default1]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/core/transformer/transformer_block.py", line 521 in checkpoint_handler
+0: [default0]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/core/transformer/transformer_block.py", line 521 in checkpoint_handler
+0: [default2]:  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1882 in _call_impl
+0: [default2]:  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1776 in _wrapped_call_impl
+0: [default2]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/core/transformer/module.py", line 352 in __call__
+0: [default1]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/core/transformer/transformer_block.py", line 538 in _checkpointed_forward
+0: [default1]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/core/transformer/transformer_block.py", line 736 in forward
+0: [default1]:  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1830 in inner
+0: [default0]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/core/transformer/transformer_block.py", line 538 in _checkpointed_forward
+0: [default0]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/core/transformer/transformer_block.py", line 736 in forward
+0: [default1]:  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1882 in _call_impl
+0: [default0]:  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1830 in inner
+0: [default1]:  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1776 in _wrapped_call_impl
+0: [default1]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/core/transformer/module.py", line 352 in __call__
+0: [default2]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/core/transformer/transformer_layer.py", line 1217 in __call__
+0: [default2]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/core/transformer/transformer_block.py", line 489 in custom_forward
+0: [default0]:  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1882 in _call_impl
+0: [default0]:  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1776 in _wrapped_call_impl
+0: [default0]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/core/transformer/module.py", line 352 in __call__
+0: [default0]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/core/transformer/transformer_block.py", line 619 in __call__
+0: [default0]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/core/models/gpt/gpt_model.py", line 525 in forward
+0: [default2]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/core/tensor_parallel/random.py", line 517 in forward
+0: [default2]:  File "/usr/local/lib/python3.12/dist-packages/torch/autograd/function.py", line 583 in apply
+0: [default2]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/core/tensor_parallel/random.py", line 576 in checkpoint
+0: [default1]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/core/transformer/transformer_block.py", line 619 in __call__
+0: [default1]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/core/models/gpt/gpt_model.py", line 525 in forward
+0: [default0]:  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1830 in inner
+0: [default0]:  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1882 in _call_impl
+0: [default1]:  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1830 in inner
+0: [default2]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/core/transformer/transformer_block.py", line 521 in checkpoint_handler
+0: [default2]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/core/transformer/transformer_block.py", line 538 in _checkpointed_forward
+0: [default2]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/core/transformer/transformer_block.py", line 736 in forward
+0: [default0]:  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1776 in _wrapped_call_impl
+0: [default0]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/core/transformer/module.py", line 489 in forward
+0: [default2]:  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1830 in inner
+0: [default2]:  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1882 in _call_impl
+0: [default2]:  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1776 in _wrapped_call_impl
+0: [default0]:  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1830 in inner
+0: [default0]:  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1882 in _call_impl
+0: [default1]:  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1882 in _call_impl
+0: [default1]:  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1776 in _wrapped_call_impl
+0: [default1]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/core/transformer/module.py", line 489 in forward
+0: [default1]:  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1830 in inner
+0: [default2]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/core/transformer/module.py", line 352 in __call__
+0: [default2]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/core/transformer/transformer_block.py", line 619 in __call__
+0: [default2]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/core/models/gpt/gpt_model.py", line 525 in forward
+0: [default1]:  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1882 in _call_impl
+0: [default1]:  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1776 in _wrapped_call_impl
+0: [default0]:  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1776 in _wrapped_call_impl
+0: [default1]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/core/distributed/data_parallel_base.py", line 22 in forward
+0: [default1]:  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1787 in _call_impl
+0: [default1]:  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1776 in _wrapped_call_impl
+0: [default1]:  File "/users/course_00197/scratch/lsaie-ss26-gipfelsturm/Megatron-LM/pretrain_gpt.py", line 197 in forward_step
+0: [default0]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/core/distributed/data_parallel_base.py", line 22 in forward
+0: [default0]:  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1787 in _call_impl
+0: [default0]:  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1776 in _wrapped_call_impl
 0: [default1]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/core/pipeline_parallel/schedules.py", line 423 in forward_step
 0: [default1]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/core/pipeline_parallel/schedules.py", line 636 in forward_backward_no_pipelining
 0: [default1]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/training/training.py", line 1652 in train_step
 0: [default1]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/training/training.py", line 2808 in train
 0: [default1]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/training/training.py", line 1031 in pretrain
+0: [default0]:  File "/users/course_00197/scratch/lsaie-ss26-gipfelsturm/Megatron-LM/pretrain_gpt.py", line 197 in forward_step
+0: [default0]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/core/pipeline_parallel/schedules.py", line 423 in forward_step
 0: [default1]:  File "/users/course_00197/scratch/lsaie-ss26-gipfelsturm/Megatron-LM/pretrain_gpt.py", line 342 in <module>
+0: [default0]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/core/pipeline_parallel/schedules.py", line 636 in forward_backward_no_pipelining
+0: [default0]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/training/training.py", line 1652 in train_step
+0: [default0]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/training/training.py", line 2808 in train
+0: [default0]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/training/training.py", line 1031 in pretrain
+0: [default0]:  File "/users/course_00197/scratch/lsaie-ss26-gipfelsturm/Megatron-LM/pretrain_gpt.py", line 342 in <module>
+0: [default2]:  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1830 in inner
+0: [default2]:  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1882 in _call_impl
+0: [default2]:  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1776 in _wrapped_call_impl
+0: [default2]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/core/transformer/module.py", line 489 in forward
+0: [default2]:  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1830 in inner
+0: [default2]:  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1882 in _call_impl
+0: [default2]:  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1776 in _wrapped_call_impl
+0: [default2]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/core/distributed/data_parallel_base.py", line 22 in forward
+0: [default2]:  File "/usr/local/lib/pytho
+0: n3.12/dist-packages/torch/nn/modules/module.py", line 1787 in _call_impl
+0: [default2]:  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1776 in _wrapped_call_impl
+0: [default2]:  File "/users/course_00197/scratch/lsaie-ss26-gipfelsturm/Megatron-LM/pretrain_gpt.py", line 197 in forward_step
+0: [default2]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/core/pipeline_parallel/schedules.py", line 423 in forward_step
+0: [default2]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/core/pipeline_parallel/schedules.py", line 636 in forward_backward_no_pipelining
+0: [default2]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/training/training.py", line 1652 in train_step
+0: [default2]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/training/training.py", line 2808 in train
+0: [default2]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm
+0: /Megatron-LM/megatron/training/training.py", line 1031 in pretrain
+0: [default2]:  File "/users/course_00197/scratch/lsaie-ss26-gipfelsturm/Megatron-LM/pretrain_gpt.py", line 342 in <module>
 0: [default3]:Stack (most recent call first):
-0: [default3]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/training/utils.py", line 687 in _broadcast_cu_seqlens
-0: [default3]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/training/utils.py", line 703 in get_batch_on_this_tp_rank
-0: [default3]:  File "/users/course_00197/scratch/lsaie-ss26-gipfelsturm/Megatron-LM/pretrain_gpt.py", line 75 in get_batch
-0: [default3]:  File "/users/course_00197/scratch/lsaie-ss26-gipfelsturm/Megatron-LM/pretrain_gpt.py", line 182 in forward_step
+0: [default3]:  File "/usr/local/lib/python3.12/dist-packages/transformer_engine/pytorch/cpp_extensions/gemm.py", line 205 in general_gemm
+0: [default3]:  File "/usr/local/lib/python3.12/dist-packages/transformer_engine/pytorch/module/layernorm_linear.py", line 361 in forward
+0: [default3]:  File "/usr/local/lib/python3.12/dist-packages/transformer_engine/pytorch/module/layernorm_linear.py", line 1589 in forward
+0: [default3]:  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/eval_frame.py", line 1154 in _fn
+0: [default3]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/core/extensions/transformer_engine.py", line 898 in forward
+0: [default3]:  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1830 in inner
+0: [default3]:  F
+0: ile "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1882 in _call_impl
+0: [default3]:  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1776 in _wrapped_call_impl
+0: [default3]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/core/transformer/mlp.py", line 159 in forward
+0: [default3]:  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1830 in inner
+0: [default3]:  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1882 in _call_impl
+0: [default3]:  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1776 in _wrapped_call_impl
+0: [default3]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/core/transformer/transformer_layer.py", line 756 in _forward_mlp
+0: [default3]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/core/transformer/transformer_layer.py", line 514 in forward
+0: 
+0: [default3]:  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1830 in inner
+0: [default3]:  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1882 in _call_impl
+0: [default3]:  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1776 in _wrapped_call_impl
+0: [default3]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/core/transformer/module.py", line 352 in __call__
+0: [default3]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/core/transformer/transformer_layer.py", line 1217 in __call__
+0: [default3]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/core/transformer/transformer_block.py", line 489 in custom_forward
+0: [default3]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/core/tensor_parallel/random.py", line 517 in forward
+0: [default3]:  File "/usr/local/lib/python3.12/dist-packag
+0: es/torch/autograd/function.py", line 583 in apply
+0: [default3]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/core/tensor_parallel/random.py", line 576 in checkpoint
+0: [default3]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/core/transformer/transformer_block.py", line 521 in checkpoint_handler
+0: [default3]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/core/transformer/transformer_block.py", line 538 in _checkpointed_forward
+0: [default3]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/core/transformer/transformer_block.py", line 736 in forward
+0: [default3]:  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1830 in inner
+0: [default3]:  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1882 in _call_impl
+0: [default3]:  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1776 
+0: in _wrapped_call_impl
+0: [default3]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/core/transformer/module.py", line 352 in __call__
+0: [default3]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/core/transformer/transformer_block.py", line 619 in __call__
+0: [default3]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/core/models/gpt/gpt_model.py", line 525 in forward
+0: [default3]:  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1830 in inner
+0: [default3]:  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1882 in _call_impl
+0: [default3]:  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1776 in _wrapped_call_impl
+0: [default3]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/core/transformer/module.py", line 489 in forward
+0: [default3]:  File "/usr/local/lib/python3.12/dist-packag
+0: es/torch/nn/modules/module.py", line 1830 in inner
+0: [default3]:  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1882 in _call_impl
+0: [default3]:  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1776 in _wrapped_call_impl
+0: [default3]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/core/distributed/data_parallel_base.py", line 22 in forward
+0: [default3]:  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1787 in _call_impl
+0: [default3]:  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1776 in _wrapped_call_impl
+0: [default3]:  File "/users/course_00197/scratch/lsaie-ss26-gipfelsturm/Megatron-LM/pretrain_gpt.py", line 197 in forward_step
 0: [default3]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/core/pipeline_parallel/schedules.py", line 423 in forward_step
-0: [default3]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/core/pipeline_parallel/schedules.py", line 636 in forward_backward_no_pipelining
+0: [default3]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss
+0: 26-gipfelsturm/Megatron-LM/megatron/core/pipeline_parallel/schedules.py", line 636 in forward_backward_no_pipelining
 0: [default3]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/training/training.py", line 1652 in train_step
 0: [default3]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/training/training.py", line 2808 in train
 0: [default3]:  File "/iopsstor/scratch/cscs/course_00197/lsaie-ss26-gipfelsturm/Megatron-LM/megatron/training/training.py", line 1031 in pretrain
 0: [default3]:  File "/users/course_00197/scratch/lsaie-ss26-gipfelsturm/Megatron-LM/pretrain_gpt.py", line 342 in <module>
+0: W0512 20:02:26.035000 269050 torch/distributed/elastic/multiprocessing/api.py:1010] Sending process 269643 closing signal SIGTERM
+0: W0512 20:02:26.036000 269050 torch/distributed/elastic/multiprocessing/api.py:1010] Sending process 269644 closing signal SIGTERM
+0: W0512 20:02:26.036000 269050 torch/distributed/elastic/multiprocessing/api.py:1010] Sending process 269645 closing signal SIGTERM
