@@ -1,0 +1,22 @@
+Model;CUDA Graph;Baseline;Graph;Speedup
+125m;transformer_engine / attn;41271;41269;-0.00%
+125m;transformer_engine / full-layer/default;41271;40774;-1.20%
+125m;transformer_engine / mlp;41271;40777;-1.20%
+350m;transformer_engine / attn;40405;40389;-0.04%
+350m;transformer_engine / full-layer/default;40405;41270;2.14%
+350m;transformer_engine / mlp;40405;42565;5.35%
+760m;transformer_engine / attn;41750;42595;2.02%
+760m;transformer_engine / full-layer/default;41750;42591;2.01%
+760m;transformer_engine / mlp;41750;42528;1.86%
+8b;transformer_engine / attn;10819;10873;0.50%
+8b;transformer_engine / attn;10819;10632;-1.72%
+8b;transformer_engine / attn mlp;10819;10670;-1.37%
+8b;transformer_engine / attn mlp;10819;10789;-0.27%
+8b;local / full_iteration;10819;8064;-25.46%
+8b;local / full_iteration;10819;7376;-31.82%
+8b;transformer_engine / mlp;10819;10705;-1.05%
+8b;transformer_engine / mlp;10819;10990;1.58%
+8b;transformer_engine / full-layer/default;10734;10825;0.85%
+8b;transformer_engine / full-layer/default;10734;10917;1.70%
+8b;transformer_engine / attn;10878;10801;-0.71%
+8b;transformer_engine / attn;10878;10560;-2.93%

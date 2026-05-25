@@ -1,0 +1,22 @@
+model,tag,steps,nodes,tp,pp,mbs,cuda_graph_impl,cuda_graph_scope,baseline_tags,baseline_avg_last10,graph_avg_last10,speedup_pct,log
+125m,cgtest-125m-mbs1-te-attn,100,1,1,1,1,transformer_engine,attn,cgtest-125m-mbs1-baseline,41271,41269,-0.00,logs/gipfel-throughput-125m-cgtest-125m-mbs1-te-attn-100s-1n-tp1-pp1-mbs1-2179607.log
+125m,cgtest-125m-mbs1-te-full-layer,100,1,1,1,1,transformer_engine,full-layer/default,cgtest-125m-mbs1-baseline,41271,40774,-1.20,logs/gipfel-throughput-125m-cgtest-125m-mbs1-te-full-layer-100s-1n-tp1-pp1-mbs1-2179606.log
+125m,cgtest-125m-mbs1-te-mlp,100,1,1,1,1,transformer_engine,mlp,cgtest-125m-mbs1-baseline,41271,40777,-1.20,logs/gipfel-throughput-125m-cgtest-125m-mbs1-te-mlp-100s-1n-tp1-pp1-mbs1-2179608.log
+350m,cgtest-350m-mbs1-te-attn,100,1,1,1,1,transformer_engine,attn,cgtest-350m-mbs1-baseline,40405,40389,-0.04,logs/gipfel-throughput-350m-cgtest-350m-mbs1-te-attn-100s-1n-tp1-pp1-mbs1-2179611.log
+350m,cgtest-350m-mbs1-te-full-layer,100,1,1,1,1,transformer_engine,full-layer/default,cgtest-350m-mbs1-baseline,40405,41270,2.14,logs/gipfel-throughput-350m-cgtest-350m-mbs1-te-full-layer-100s-1n-tp1-pp1-mbs1-2179610.log
+350m,cgtest-350m-mbs1-te-mlp,100,1,1,1,1,transformer_engine,mlp,cgtest-350m-mbs1-baseline,40405,42565,5.35,logs/gipfel-throughput-350m-cgtest-350m-mbs1-te-mlp-100s-1n-tp1-pp1-mbs1-2179612.log
+760m,cgtest-760m-mbs1-te-attn,100,1,1,1,1,transformer_engine,attn,cgtest-760m-mbs1-baseline,41750,42595,2.02,logs/gipfel-throughput-760m-cgtest-760m-mbs1-te-attn-100s-1n-tp1-pp1-mbs1-2179615.log
+760m,cgtest-760m-mbs1-te-full-layer,100,1,1,1,1,transformer_engine,full-layer/default,cgtest-760m-mbs1-baseline,41750,42591,2.01,logs/gipfel-throughput-760m-cgtest-760m-mbs1-te-full-layer-100s-1n-tp1-pp1-mbs1-2179614.log
+760m,cgtest-760m-mbs1-te-mlp,100,1,1,1,1,transformer_engine,mlp,cgtest-760m-mbs1-baseline,41750,42528,1.86,logs/gipfel-throughput-760m-cgtest-760m-mbs1-te-mlp-100s-1n-tp1-pp1-mbs1-2179617.log
+8b,cg-attn-8b,60,1,1,1,2,transformer_engine,attn,baseline-8b;mbs2-8b;repeat-baseline-8b,10819,10873,0.50,logs/gipfel-throughput-8b-cg-attn-8b-60s-1n-tp1-pp1-mbs2-2128165.log
+8b,cg-attn-8b,60,1,1,1,2,transformer_engine,attn,baseline-8b;mbs2-8b;repeat-baseline-8b,10819,10632,-1.72,logs/gipfel-throughput-8b-cg-attn-8b-60s-1n-tp1-pp1-mbs2-2152475.log
+8b,cg-attn-mlp-8b,60,1,1,1,2,transformer_engine,attn mlp,baseline-8b;mbs2-8b;repeat-baseline-8b,10819,10670,-1.37,logs/gipfel-throughput-8b-cg-attn-mlp-8b-60s-1n-tp1-pp1-mbs2-2128167.log
+8b,cg-attn-mlp-8b,60,1,1,1,2,transformer_engine,attn mlp,baseline-8b;mbs2-8b;repeat-baseline-8b,10819,10789,-0.27,logs/gipfel-throughput-8b-cg-attn-mlp-8b-60s-1n-tp1-pp1-mbs2-2152477.log
+8b,cg-fulliter-8b,60,1,1,1,2,local,full_iteration,baseline-8b;mbs2-8b;repeat-baseline-8b,10819,8064,-25.46,logs/gipfel-throughput-8b-cg-fulliter-8b-60s-1n-tp1-pp1-mbs2-2128168.log
+8b,cg-fulliter-8b,60,1,1,1,2,local,full_iteration,baseline-8b;mbs2-8b;repeat-baseline-8b,10819,7376,-31.82,logs/gipfel-throughput-8b-cg-fulliter-8b-60s-1n-tp1-pp1-mbs2-2152478.log
+8b,cg-mlp-8b,60,1,1,1,2,transformer_engine,mlp,baseline-8b;mbs2-8b;repeat-baseline-8b,10819,10705,-1.05,logs/gipfel-throughput-8b-cg-mlp-8b-60s-1n-tp1-pp1-mbs2-2128166.log
+8b,cg-mlp-8b,60,1,1,1,2,transformer_engine,mlp,baseline-8b;mbs2-8b;repeat-baseline-8b,10819,10990,1.58,logs/gipfel-throughput-8b-cg-mlp-8b-60s-1n-tp1-pp1-mbs2-2152476.log
+8b,cg-te-full-layer-8b,100,1,1,1,2,transformer_engine,full-layer/default,baseline-8b-100,10734,10825,0.85,logs/gipfel-throughput-8b-cg-te-full-layer-8b-100s-1n-tp1-pp1-mbs2-2178382.log
+8b,cg-te-full-layer-8b,100,1,1,1,2,transformer_engine,full-layer/default,baseline-8b-100,10734,10917,1.70,logs/gipfel-throughput-8b-cg-te-full-layer-8b-100s-1n-tp1-pp1-mbs2-2179171.log
+8b,repeat-cg-attn-8b,60,1,1,1,2,transformer_engine,attn,repeat-baseline-8b,10878,10801,-0.71,logs/gipfel-throughput-8b-repeat-cg-attn-8b-60s-1n-tp1-pp1-mbs2-2152473.log
+8b,repeat-cg-attn-8b,60,1,1,1,2,transformer_engine,attn,repeat-baseline-8b,10878,10560,-2.93,logs/gipfel-throughput-8b-repeat-cg-attn-8b-60s-1n-tp1-pp1-mbs2-2152483.log
