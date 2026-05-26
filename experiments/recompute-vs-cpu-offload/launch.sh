@@ -84,39 +84,39 @@ esac
 case $MODEL_SIZE in
     125m)
         NUM_LAYERS=12;  HIDDEN=768;  FFN=2048;  HEADS=12; KV_HEADS=4
-        MBS=16
+        MBS=${MBS:-16}
         ;;
     350m)
         NUM_LAYERS=24; HIDDEN=1024; FFN=2816;  HEADS=16; KV_HEADS=4
-        MBS=8
+        MBS=${MBS:-8}
         ;;
     760m)
         NUM_LAYERS=24; HIDDEN=1536; FFN=4096;  HEADS=16; KV_HEADS=4
-        MBS=4
+        MBS=${MBS:-4}
         ;;
     1.5b)
         NUM_LAYERS=48; HIDDEN=1600; FFN=4352;  HEADS=20; KV_HEADS=4
-        MBS=4
+        MBS=${MBS:-4}
         ;;
     3b)
         NUM_LAYERS=32; HIDDEN=3072; FFN=8192;  HEADS=24; KV_HEADS=8
-        MBS=4
+        MBS=${MBS:-4}
         ;;
     8b)
         NUM_LAYERS=32; HIDDEN=4096; FFN=14336; HEADS=32; KV_HEADS=8
-        MBS=2
+        MBS=${MBS:-2}
         ;;
     18b)
         NUM_LAYERS=40; HIDDEN=6144; FFN=20480; HEADS=48; KV_HEADS=8
-        MBS=1
+        MBS=${MBS:-1}
         ;;
     22b)
-        NUM_LAYERS=40; HIDDEN=7168; FFN=19456; HEADS=56; KV_HEADS=8
-        MBS=1
+        NUM_LAYERS=40; HIDDEN=7168; FFN=20480; HEADS=56; KV_HEADS=8
+        MBS=${MBS:-1}
         ;;
     24b)
         NUM_LAYERS=32; HIDDEN=8192; FFN=24576; HEADS=64; KV_HEADS=8
-        MBS=1
+        MBS=${MBS:-1}
         ;;
     *)
         echo "Unknown model size: $MODEL_SIZE. Choose: 125m, 350m, 760m, 1.5b, 3b, 8b, 18b, 22b, 24b"
@@ -356,6 +356,14 @@ TRAINING_CMD="torchrun ${TORCHRUN_ARGS[@]} $MEGATRON_LM_DIR/pretrain_gpt.py \
     ${DATA_ARGS[@]}"
 
 TOKENIZER
+
+if [ -n "${EXTRA_ARGS:-}" ]; then
+    EXTRA_ARGS_ONELINE=$(echo "${EXTRA_ARGS}" | tr '\n' ' ')
+    cat >> "$SCRIPT" << EXTRA_ARGS_SECTION
+
+TRAINING_CMD="\$TRAINING_CMD ${EXTRA_ARGS_ONELINE}"
+EXTRA_ARGS_SECTION
+fi
 
 cat >> "$SCRIPT" << 'WANDB_PLACEHOLDER'
 WANDB_PLACEHOLDER
