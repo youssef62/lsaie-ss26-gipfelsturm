@@ -1,0 +1,12 @@
+model,status,count
+125m,finished,5
+140b,oom,4
+32b,failed,1
+32b,has_metrics,3
+32b,oom,20
+350m,finished,4
+760m,finished,4
+8b,failed,1
+8b,finished,18
+8b,has_metrics,3
+8b,oom,1

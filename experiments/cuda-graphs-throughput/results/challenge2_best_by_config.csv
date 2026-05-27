@@ -1,0 +1,10 @@
+model,nodes,tp,pp,mbs,gbs,seq_len,steps,best_tag,avg_last10_tokens_sec_gpu,best_tokens_sec_gpu,best_tflops_gpu,log
+125m,1,1,1,1,256,4096,100,cgtest-125m-mbs1-baseline,41271,46488,42,logs/gipfel-throughput-125m-cgtest-125m-mbs1-baseline-100s-1n-tp1-pp1-mbs1-2179605.log
+125m,1,1,1,16,256,4096,50,sanity-125m,40718,53009,48,logs/gipfel-throughput-125m-sanity-125m-50s-1n-tp1-pp1-mbs16-2127788.log
+32b,4,4,4,1,256,4096,60,fit-32b-4n-tp4pp4,1908,1960,403,logs/gipfel-throughput-32b-fit-32b-4n-tp4pp4-60s-4n-tp4-pp4-mbs1-2178934.log
+350m,1,1,1,1,256,4096,100,cgtest-350m-mbs1-te-mlp,42565,47860,121,logs/gipfel-throughput-350m-cgtest-350m-mbs1-te-mlp-100s-1n-tp1-pp1-mbs1-2179612.log
+760m,1,1,1,1,256,4096,100,cgtest-760m-mbs1-te-attn,42595,47527,235,logs/gipfel-throughput-760m-cgtest-760m-mbs1-te-attn-100s-1n-tp1-pp1-mbs1-2179615.log
+8b,1,1,1,1,256,4096,60,mbs1-8b,10656,10950,507,logs/gipfel-throughput-8b-mbs1-8b-60s-1n-tp1-pp1-mbs1-2152484.log
+8b,1,1,1,2,256,4096,100,cg-te-full-layer-8b,10917,10991,509,logs/gipfel-throughput-8b-cg-te-full-layer-8b-100s-1n-tp1-pp1-mbs2-2179171.log
+8b,1,1,1,2,256,4096,50,baseline-8b,10839,10963,508,logs/gipfel-throughput-8b-baseline-8b-50s-1n-tp1-pp1-mbs2-2127789.log
+8b,1,1,1,2,256,4096,60,cg-mlp-8b,10990,11151,517,logs/gipfel-throughput-8b-cg-mlp-8b-60s-1n-tp1-pp1-mbs2-2152476.log
