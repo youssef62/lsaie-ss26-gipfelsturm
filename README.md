@@ -1,18 +1,23 @@
-# Gipfelsturm
+# Challenge 2. CPU Offloading and Cuda Graphs. 
+
+We choose to work on challenge 2: throughput. 
+## Experiments 
+
+Experiments from the [LSAIE report](report.pdf):
+
+- Experiment 1 — Parallelism Strategy Sweep (8B): [experiments/parallelism-strategies/](experiments/parallelism-strategies/)
+- Experiment 2 — Offloading vs. Recomputation across Micro-Batch Sizes (23B, TP=4): [experiments/recompute-vs-cpu-offload/](experiments/recompute-vs-cpu-offload/)
+- Experiment 3 — Hybrid Offloading and Recomputation with Pipeline Parallelism (PP=4): [experiments/recompute-vs-cpu-offload/](experiments/recompute-vs-cpu-offload/)
+- Experiment 4 — Selective Recompute Analysis (TP=4): [experiments/selective-recompute-analysis/](experiments/selective-recompute-analysis/)
+- Experiment 5 — Fine-Grained Offload Without Recompute (TP=4): [experiments/fine-grained-offload-no-recompute/](experiments/fine-grained-offload-no-recompute/)
+- CUDA Graph Experiments (8B + 125M/350M/760M stress test): [experiments/cuda-graphs-throughput/](experiments/cuda-graphs-throughput/)
+
+
+## Gipfelsturm
 
 *Gipfelsturm* (German: "summit attempt"), a race to *peak performance*. Inspired by nanoGPT/nanochat which are educational single-node setups, Gipfelsturm focuses on distributed LLM training on production-grade infrastructure. We use [Megatron-LM](https://github.com/NVIDIA/Megatron-LM), the de facto industry standard for distributed LLM training, running on the [CSCS Alps supercomputer](https://arxiv.org/abs/2507.02404) with [GH200 compute nodes connected via Slingshot-11](https://arxiv.org/abs/2408.11556).
 
-There are two dimensions on which you can improve. Your team should focus on at least one.
 
-### Challenge 1: improve loss or compare with alternative method given fixed time
-
-Compute the empirical throughput of your model and batch size. Then compute the number of tokens you can process in theory in a 30 min, 1 hour, and 2 hour time window. This defines the number of steps your model/batch size combination should be trained. Model size, learning rate, schedule, batch size, and training recipe are all your choice. The only constraint is the clock on the wall. Aim for lowest eval loss.
-
-| Theoretical wall-clock time | GPU-hours (at 32 GPUs) | Natural Model Scale |
-|-----------------------------|------------------------|---------------------|
-| 30 min | 16 | 125m – 3b |
-| 1 hour | 32 | 3b – 8b |
-| 2 hours | 64 | 8b+ |
 
 ### Challenge 2: maximum throughput
 
